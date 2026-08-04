@@ -1,42 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOKKINO MEDIA</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #888888;
-            font-size: 1.2rem;
-        }
-        a {
-            color: #ffffff;
-            text-decoration: underline;
-            margin-top: 20px;
-            display: inline-block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dokkino</title>
+<style>
+  :root {
+    --bg-main: #FDFBF7;
+    --card-bg: #F5F0EB;
+    --card-border: #E6DFD5;
+    --text-primary: #1A1918;
+    --text-secondary: #5C5852;
+    --gold-accent: #C59B27;
+  }
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 60px 20px;
+    box-sizing: border-box;
+  }
+  .dokkino-container { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .brand-logo { font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
+  .gold-k { color: var(--gold-accent); }
+  .brand-tagline { font-size: 16px; color: var(--text-secondary); margin-bottom: 50px; }
+  .hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 80px; }
+  .hub-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-decoration: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .hub-card:hover { transform: translateY(-4px); border-color: var(--gold-accent); }
+  .card-title { font-family: inherit; font-size: 22px; font-weight: 600; margin: 0 0 12px 0; color: var(--text-primary); }
+  .card-description { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin: 0 0 30px 0; }
+  .card-link-action { font-size: 14px; font-weight: 600; color: var(--gold-accent); }
+  .footer-wrapper { border-top: 1px solid var(--card-border); padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { color: var(--text-secondary); font-size: 13px; text-decoration: none; }
+  .footer-links a:hover { color: var(--text-primary); }
+  .copyright { font-size: 12px; color: #9E988F; }
+  @media (max-width: 850px) { .hub-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
-    <h1>DOKKINO MEDIA</h1>
-    <p>Официальный сайт находится в разработке.</p>
-    <a href="/chris-way">Перейти к «Джордж Флоринг» (Крис Вэй)</a>
+<div class="dokkino-container">
+  <header>
+    <div class="brand-logo">dok<span class="gold-k">k</span>ino</div>
+    <div class="brand-tagline">Медиахолдинг и творческая вселенная</div>
+  </header>
+
+  <main class="hub-grid">
+    <a href="music.html" class="hub-card">
+      <div>
+        <h2 class="card-title">dokkino Музыка</h2>
+        <p class="card-description">Атмосферная музыка с элементами ИИ: Ambient, Cinematic, Deep House.</p>
+      </div>
+      <div class="card-link-action">Слушать &rarr;</div>
+    </a>
+
+    <a href="books.html" class="hub-card">
+      <div>
+        <h2 class="card-title">dokkino Книги</h2>
+        <p class="card-description">Серия детских книг «Джордж Флоринг и его необычные приключения», автор Крис Вэй.</p>
+      </div>
+      <div class="card-link-action">Смотреть серию &rarr;</div>
+    </a>
+
+    <a href="https://youtube.com/@dokkino" target="_blank" rel="noopener" class="hub-card">
+      <div>
+        <h2 class="card-title">dokkino Синема</h2>
+        <p class="card-description">Кинопроекты, короткометражные фильмы, оригинальные психологические истории.</p>
+      </div>
+      <div class="card-link-action">Смотреть на YouTube &rarr;</div>
+    </a>
+  </main>
+
+  <footer class="footer-wrapper">
+    <div class="footer-links">
+      <a href="terms.html">Условия использования</a>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="disclaimer.html">Отказ от ответственности</a>
+    </div>
+    <div class="copyright">&copy; 2026 DOKKINO MEDIA. Все права защищены.</div>
+  </footer>
+</div>
 </body>
 </html>
