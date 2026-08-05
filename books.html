@@ -3,31 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dokkino Книги</title>
+<title>dokkino book</title>
 <style>
   :root {
     --bg-main: #FDFBF7; --card-bg: #F5F0EB; --card-border: #E6DFD5;
     --text-primary: #1A1918; --text-secondary: #5C5852; --gold-accent: #C59B27;
   }
-  body { background-color: var(--bg-main); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 60px 20px; box-sizing: border-box; }
+  body { background-color: var(--bg-main); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 40px 20px 60px; box-sizing: border-box; }
+  .lang-switch { text-align: right; max-width: 900px; margin: 0 auto 20px; font-size: 14px; font-weight: 600; }
+  .lang-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 4px 8px; font-size: 14px; font-weight: 600; }
+  .lang-btn.active { color: var(--gold-accent); text-decoration: underline; }
   .cw-container { max-width: 900px; margin: 0 auto; }
-  .cw-back { display: inline-block; font-size: 13px; color: var(--text-secondary); text-decoration: none; margin-bottom: 40px; }
+  .cw-back { display: inline-block; font-size: 13px; color: var(--text-secondary); text-decoration: none; margin-bottom: 30px; }
   .cw-back:hover { color: var(--gold-accent); }
   .cw-pen-name { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-accent); font-weight: 600; margin-bottom: 10px; }
-  .cw-title { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 16px 0; }
-  .cw-intro { font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 640px; margin: 0 0 60px 0; }
+  .cw-title { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 16px 0; line-height: 1.25; }
+  .cw-subtitle { font-size: 18px; font-weight: 600; color: var(--gold-accent); margin-bottom: 24px; }
+  .cw-intro { font-size: 15px; line-height: 1.8; color: var(--text-secondary); margin: 0 0 40px 0; background: var(--card-bg); padding: 28px; border-radius: 16px; border: 1px solid var(--card-border); }
+  .cw-intro p { margin: 0 0 16px 0; }
+  .cw-intro p:last-child { margin-bottom: 0; }
+  .quote-box { font-style: italic; border-left: 3px solid var(--gold-accent); padding-left: 16px; margin: 16px 0; color: var(--text-primary); }
   .cw-section-label { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 12px; }
   .empty-state { background-color: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 16px; padding: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; }
+  footer { border-top: 1px solid var(--card-border); margin-top: 60px; padding-top: 24px; text-align: center; font-size: 12px; color: #9E988F; }
 </style>
 </head>
 <body>
+
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLanguage('ru')">RU</button> | 
+  <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+</div>
+
 <div class="cw-container">
   <a href="index.html" class="cw-back">&larr; dokkino</a>
-  <div class="cw-pen-name">Крис Вэй</div>
-  <h1 class="cw-title">Джордж Флоринг и его необычные приключения</h1>
-  <p class="cw-intro">Серия детских фантастических книг. Главы будут появляться здесь по мере публикации.</p>
-  <div class="cw-section-label">Главы</div>
-  <div class="empty-state">Главы скоро появятся.</div>
+  <div class="cw-pen-name" data-ru="Крис Вэй" data-en="Chris Way">Крис Вэй</div>
+  
+  <h1 class="cw-title" data-ru="«Джорж Флоринг и его необыкновенные приключения»" data-en="'George Floring and His Extraordinary Adventures'">«Джорж Флоринг и его необыкновенные приключения»</h1>
+  <div class="cw-subtitle" data-ru="Светлое детское и юношеское фэнтези для взрослых" data-en="Light fantasy for children, youth, and adults">Светлое детское и юношеское фэнтези для взрослых</div>
+
+  <div class="cw-intro">
+    <div class="quote-box" data-ru="Читающий эту книгу уже избран Судьбой." data-en="Whoever reads this book has already been chosen by Destiny.">Читающий эту книгу уже избран Судьбой.</div>
+    
+    <p data-ru="Это фантастический роман для детей и взрослых о параллельной реальности, взрослении, отношениях с противоположным полом и о войне с «Адовой планетой»." data-en="This is a sci-fi fantasy novel for children and adults about parallel realities, growing up, relationships, and the war against the 'Hellish Planet'.">Это фантастический роман для детей и взрослых о параллельной реальности, взрослении, отношениях с противоположным полом и о войне с «Адовой планетой».</p>
+    
+    <p data-ru="Первая часть романа повествует о размеренной жизни существ из параллельной реальности на планете Земля. Мы с вами для них — сказочные персонажи." data-en="The first part of the novel tells the story of the peaceful life of beings from a parallel reality living on planet Earth. To them, you and I are fairy-tale characters.">Первая часть романа повествует о размеренной жизни существ из параллельной реальности на планете Земля. Мы с вами для них — сказочные персонажи.</p>
+    
+    <p data-ru="Книга подойдёт любому возрасту. С I по III главы она будет интересна детям от 5 лет. С IV по XI захватит читателей от 7 лет. А дальше начинаются совсем необыкновенные приключения." data-en="This book is suitable for all ages. Chapters I through III will captivate children from age 5. Chapters IV through XI will hook readers from age 7 and up. Beyond that, truly extraordinary adventures begin.">Книга подойдёт любому возрасту. С I по III главы она будет интересна детям от 5 лет. С IV по XI захватит читателей от 7 лет. А дальше начинаются совсем необыкновенные приключения.</p>
+    
+    <p data-ru="Для подростков есть инструкция, как покорить сердце своей любимой, стать знаменитым и состоятельным. Почти все мальчишки узнают себя в Джорже Флоринге, а девочки и девушки полюбят Люси, потому что она такая же, как они, только из другого измерения." data-en="For teenagers, there is a practical guide on how to win the heart of your beloved, become famous, and achieve success. Almost all boys will see themselves in George Floring, while girls and young women will adore Lucy — because she is just like them, only from another dimension.">Для подростков есть инструкция, как покорить сердце своей любимой, стать знаменитым и состоятельным. Почти все мальчишки узнают себя в Джорже Флоринге, а девочки и девушки полюбят Люси, потому что она такая же, как они, только из другого измерения.</p>
+    
+    <p data-ru="Любители фэнтези и научной фантастики получат удовольствие от неизбитого сюжета, а для тех, кто стремится к осознанности, в конце первой книги раскрываются тайны мироздания на доступном языке. Что бы ни происходило с нашими героями — всё к лучшему. Есть Сила, которая знает путь!" data-en="Fantasy and sci-fi fans will enjoy the fresh, unique storyline. For those seeking awareness, the end of the first book unveils the secrets of the universe in accessible language. Whatever happens to our heroes — it is all for the best. There is a Power that knows the way!">Любители фэнтези и научной фантастики получат удовольствие от неизбитого сюжета, а для тех, кто стремится к осознанности, в конце первой книги раскрываются тайны мироздания на доступном языке. Что бы ни происходило с нашими героями — всё к лучшему. Есть Сила, которая знает путь!</p>
+  </div>
+
+  <div class="cw-section-label" data-ru="Главы" data-en="Chapters">Главы</div>
+  <div class="empty-state" data-ru="Главы скоро появятся." data-en="Chapters coming soon.">Главы скоро появятся.</div>
+
+  <footer>
+    <div data-ru="&copy; 2026 DOKKINO MEDIA LIMITED. Все права защищены." data-en="&copy; 2026 DOKKINO MEDIA LIMITED. All rights reserved.">&copy; 2026 DOKKINO MEDIA LIMITED. Все права защищены.</div>
+  </footer>
 </div>
+
+<script>
+function setLanguage(lang) {
+  localStorage.setItem('dokkino_lang', lang);
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('dokkino_lang') || 'ru';
+  setLanguage(savedLang);
+});
+</script>
 </body>
 </html>
