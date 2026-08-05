@@ -1,1 +1,18 @@
-
+{
+  "id": 9,
+  "title": "Autumn Dialogue",
+  "type": "Single",
+  "year": 2025,
+  "genre": "Ambient / Cinematic Folk",
+  "cover": "covers/9.jpg",
+  "description": {
+    "ru": "<p>Осень здесь — не время года, а собеседница. Она приходит в город закрытых окон и уснувших людей, чтобы напомнить им то, что они боятся знать: всё увядает, как листья на закате. Но говорит она об этом без жестокости — её голос звучит нежно, а дождь на усталых лицах — это не непогода, а слёзы неба, смывающие то, что сами мы смыть не умеем.</p><p>Она смеётся и кружится среди людей, идущих слепо мимо, — единственная живая среди спящих. А когда исчезает, так же легко, без прощания, — её смех медленно растворяется в небе. Потому что уход, случившийся красиво, оставляет после себя не пустоту, а эхо.</p><hr style=\"border: none; border-top: 1px solid var(--card-border); margin: 20px 0;\"><p style=\"color: var(--text-secondary); font-style: italic;\">Autumn, here, is not a season but a companion. She comes to a city of shuttered windows and sleepwalking people to remind them of the one thing they're afraid to know: everything fades, like leaves at sunset. But there's no cruelty in how she says it — her voice stays gentle, and the rain on tired faces isn't weather at all, but the sky's own tears, washing away what we never learned to wash away ourselves.</p><p style=\"color: var(--text-secondary); font-style: italic;\">She laughs and spins among the people drifting blindly past — the only living thing in a city of sleepers. And when she vanishes, just as lightly, without a goodbye, her laughter dissolves slowly into the sky. Because an ending, when it comes gracefully, leaves behind not emptiness, but an echo.</p>",
+    "en": "<p>Autumn, here, is not a season but a companion. She comes to a city of shuttered windows and sleepwalking people to remind them of the one thing they're afraid to know: everything fades, like leaves at sunset. But there's no cruelty in how she says it — her voice stays gentle, and the rain on tired faces isn't weather at all, but the sky's own tears, washing away what we never learned to wash away ourselves.</p><p>She laughs and spins among the people drifting blindly past — the only living thing in a city of sleepers. And when she vanishes, just as lightly, without a goodbye, her laughter dissolves slowly into the sky. Because an ending, when it comes gracefully, leaves behind not emptiness, but an echo.</p>"
+  },
+  "links": {
+    "apple": "https://music.apple.com/us/song/autumn-dialogue/1852645201",
+    "spotify": "https://open.spotify.com/track/3Y672lROgI5qs7qpfNfMSk?si=8374f9de63ed4299",
+    "amazon": "https://music.amazon.com/albums/B0G11RKDXJ?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_qkLWt8VQ2WjCEWJw31GRPZV4l",
+    "boomplay": "https://www.boomplay.com/songs/EQuTj30heGDruIlxQZjRhtPJ"
+  }
+}
