@@ -164,7 +164,6 @@
     <div class="cw-subtitle" data-ru="Дискография и истории создания треков" data-en="Discography and background stories">Дискография и истории создания треков</div>
 
     <div class="cw-section-label" data-ru="Релизы" data-en="Releases">Релизы</div>
-    
     <div class="track-list" id="tracksContainer"></div>
   </div>
 
@@ -184,13 +183,7 @@
 
     <div class="platforms-section">
       <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
-      <div class="platforms-grid">
-        <a href="https://music.apple.com" target="_blank" class="platform-btn">Apple Music</a>
-        <a href="https://spotify.com" target="_blank" class="platform-btn">Spotify</a>
-        <a href="https://music.yandex.ru" target="_blank" class="platform-btn">Яндекс Музыка</a>
-        <a href="https://music.youtube.com" target="_blank" class="platform-btn">YouTube Music</a>
-        <a href="https://vk.com/audio" target="_blank" class="platform-btn">VK Музыка</a>
-      </div>
+      <div class="platforms-grid" id="platformsGrid"></div>
     </div>
 
     <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
@@ -205,35 +198,319 @@
 </div>
 
 <script>
-// Список всех треков с привязанными файлами обложек
 const tracksData = [
-  {"id": 1, "title": "We Are Eternity", "type": "Single", "year": 2026, "genre": "Ambient / Cinematic", "cover": "We Are Eternity.jpg"},
-  {"id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": "Deep House / Ambient", "cover": "Eden He.jpg"},
-  {"id": 3, "title": "Eden She and He", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "She and He .jpg"},
-  {"id": 4, "title": "Created by Him", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": "Created by Him.jpg"},
-  {"id": 5, "title": "Falling Into You", "type": "Single", "year": 2025, "genre": "Deep House", "cover": ""},
-  {"id": 6, "title": "Transitions (Female Vocal Version)", "type": "Single", "year": 2025, "genre": "Vocal Ambient", "cover": "Transitions (Женский вокал Version).jpg"},
-  {"id": 7, "title": "Transitions (Original Version)", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "Transitions (Мужской вокал Version).jpg"},
-  {"id": 8, "title": "Moon Returns", "type": "Single", "year": 2025, "genre": "Cinematic / Ambient", "cover": "Moon Returns.jpg"},
-  {"id": 9, "title": "Autumn Dialogue", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "2 Autumn Dialogue.jpg"},
-  {"id": 10, "title": "Song of Infinity", "type": "Single", "year": 2025, "genre": "Electronic", "cover": ""},
-  {"id": 11, "title": "Song of Infinity (Alternate Mix)", "type": "Single", "year": 2025, "genre": "Electronic", "cover": ""},
-  {"id": 12, "title": "Song of Infinity (Extended Alternate Mix)", "type": "Single", "year": 2025, "genre": "Extended Mix", "cover": ""},
-  {"id": 13, "title": "Эдем. Он", "type": "Single", "year": 2025, "genre": "Deep House / Ambient", "cover": "Eden He.jpg"},
-  {"id": 14, "title": "Эдем. Она", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "She and He .jpg"},
-  {"id": 15, "title": "Храм Тишины", "type": "Single", "year": 2025, "genre": "Meditation / Ambient", "cover": ""},
-  {"id": 16, "title": "The Temple of Silence", "type": "Single", "year": 2025, "genre": "Meditation / Ambient", "cover": ""},
-  {"id": 17, "title": "Незабудка", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": "Nezabudka dokkino.jpg"},
-  {"id": 18, "title": "Осенний диалог", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "2 Autumn Dialogue.jpg"},
-  {"id": 19, "title": "Мы подходим друг другу", "type": "Single", "year": 2025, "genre": "Deep House", "cover": ""},
-  {"id": 20, "title": "Любовь не спорит", "type": "Single", "year": 2025, "genre": "Vocal / Ambient", "cover": ""},
-  {"id": 21, "title": "Луна", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "Moon Returns.jpg"},
-  {"id": 22, "title": "Несмиренная", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": ""}
+  {
+    "id": 1, 
+    "title": "We Are Eternity", 
+    "type": "Single", 
+    "year": 2026, 
+    "genre": "Ambient / Cinematic", 
+    "cover": "We Are Eternity.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/we-are-eternity-single/1874284686",
+      "spotify": "https://open.spotify.com/track/05P1ue3l7QTgEz2aWaPBPq?si=374f5ca950dc4e45",
+      "amazon": "https://music.amazon.com/albums/B0GHQMQJCQ?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_9ehaiO90hEUOium0uOID7CcNe",
+      "boomplay": "https://www.boomplay.com/songs/EQuwqMcsQFbhi0FngWkopp8d?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 2, 
+    "title": "Eden He", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Deep House / Ambient", 
+    "cover": "Eden He.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/eden-he-single/1861207738",
+      "spotify": "https://open.spotify.com/track/2OOnVb1bbwxnAwlZi63Qvg?si=77049d03641e46b5",
+      "amazon": "https://music.amazon.com/albums/B0G5J6W12H?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HfwlOifNYJ1JUocpTf1Rw7Hko",
+      "boomplay": "https://www.boomplay.com/songs/EQumMEbNsYLPNFoxaslFkic1?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 3, 
+    "title": "Eden She and He", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Ambient", 
+    "cover": "She and He .jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/eden-she-and-he-single/1860899842",
+      "spotify": "https://open.spotify.com/track/7JeP1XZMqgYJqQuEbYZS7w?si=63e68958f5764e57",
+      "amazon": "https://music.amazon.com/albums/B0G59VWVY9?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_odb10XGvOlNOdHvgS4KeqtPzE",
+      "boomplay": "https://www.boomplay.com/songs/EQust3YCyClwIfbg7LDaGm4y?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 4, 
+    "title": "Created by Him", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Cinematic", 
+    "cover": "Created by Him.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/created-by-him-single/1864607864",
+      "spotify": "https://open.spotify.com/track/0adCet9vodJmhiIEET9Sc5?si=66b1d0b7301c40d6",
+      "amazon": "https://music.amazon.com/albums/B0G873LLKR?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_i0IaEkCnXmU3ejB0PJ6xZLqXt",
+      "boomplay": "https://www.boomplay.com/songs/EQur06hM_pyDRelVOt63uTGn?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 5, 
+    "title": "Falling Into You", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Deep House", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/album/falling-into-you-single/1861960141",
+      "spotify": "https://open.spotify.com/track/3DVaW6CEQ6uedldtFDJsfB?si=90d1747b15d943f1",
+      "amazon": "https://music.amazon.com/albums/B0G5ZP9JZR?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_WBhY4Z6yk1LQXPNJ1dIlq0jeC",
+      "boomplay": "https://www.boomplay.com/songs/EQvnpKw60uKy2vTbuYS-XY9W?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 6, 
+    "title": "Transitions (Female Vocal Version)", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Vocal Ambient", 
+    "cover": "Transitions (Женский вокал Version).jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/transitions-female-vocal-version-single/1853712112",
+      "spotify": "https://open.spotify.com/album/0nCSCwRqFGyvhVJk0q8fwE?si=RrUHQOWSSOWcmc4hV6UUBA",
+      "amazon": "https://music.amazon.com/albums/B0G1RFKZ5P?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_6IEHfjabjdv11XprQSFjufy5D",
+      "boomplay": "https://www.boomplay.com/songs/EQtTLezf4_aOxxnKeOL0IfsO?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 7, 
+    "title": "Transitions (Original Version)", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Ambient", 
+    "cover": "Transitions (Мужской вокал Version).jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/song/transitions-original-version/1853319178",
+      "spotify": "https://open.spotify.com/track/2xOJtJkSW6B5vrctMm6z0o?si=848f1b22923f4784",
+      "amazon": "https://music.amazon.com/albums/B0G1JNT1G4?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_6tjg82OSo0IVSrkrChl1LlS6y",
+      "boomplay": "https://www.boomplay.com/songs/EQsDQnrGQRyyCVSIZ2mq8K18?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 8, 
+    "title": "Moon Returns", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Cinematic / Ambient", 
+    "cover": "Moon Returns.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/song/moon-returns/1853459003",
+      "spotify": "https://open.spotify.com/track/3FL9hpxJ0lq3e36yfChp7Y?si=4907081c46b348e0",
+      "amazon": "https://music.amazon.com/albums/B0G1LDX1GB?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_2jhWurD9JBzA3zUSuxGkop8ds",
+      "boomplay": "https://www.boomplay.com/songs/EQvd3cFGYZc2FPFxxo-AvmZK?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 9, 
+    "title": "Autumn Dialogue", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Ambient", 
+    "cover": "2 Autumn Dialogue.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/song/autumn-dialogue/1852645201",
+      "spotify": "https://open.spotify.com/track/3Y672lROgI5qs7qpfNfMSk?si=8374f9de63ed4299",
+      "amazon": "https://music.amazon.com/albums/B0G11RKDXJ?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_qkLWt8VQ2WjCEWJw31GRPZV4l",
+      "boomplay": "https://www.boomplay.com/songs/EQuTj30heGDruIlxQZjRhtPJ?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 10, 
+    "title": "Song of Infinity", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Electronic", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/song/song-of-infinity/1850668039",
+      "spotify": "https://open.spotify.com/track/7kQTW4H7TuFIRuZPhye2VM?si=2112240b311940a1",
+      "amazon": "https://music.amazon.com/albums/B0FY2YD4H4?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_ZcLYWGuRgQ3EgBrgLoFTmIvrP",
+      "boomplay": "https://www.boomplay.com/songs/EQvlFX9rVQl91i7fT_-kCLHP?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 11, 
+    "title": "Song of Infinity (Alternate Mix)", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Electronic", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/song/song-of-infinity-alternate-mix/1850529261",
+      "spotify": "https://open.spotify.com/album/35t3cX8oZas1vTrjdxgPEC?si=qRKVQmU9SMuGTwrXsk_UcQ",
+      "amazon": "https://music.amazon.com/albums/B0FXY8Z5QP?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_grt0OhH6FhaGkpGWOetwauwe8",
+      "boomplay": "https://www.boomplay.com/songs/EQuQ9av3C-GXpVZsw9dbVyvl?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 12, 
+    "title": "Song of Infinity (Extended Alternate Mix)", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Extended Mix", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/song/song-of-infinity-extended-alternate-mix/1850529536",
+      "spotify": "https://open.spotify.com/album/3TFQEHwWxAz4GdpjJzvlsc?si=n2N0W-nAQ264ECifYWqAcg",
+      "amazon": "https://music.amazon.com/albums/B0FXYB5VN8?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_DrK6VzjooS9tWsNSO7lRLWf5C",
+      "boomplay": "https://www.boomplay.com/songs/EQtc0gt6PrEQsgXia-5KhELW?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 13, 
+    "title": "Эдем. Он", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Deep House / Ambient", 
+    "cover": "Eden He.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/%D1%8D%D0%B4%D0%B5%D0%BC-%D0%BE%D0%BD-single/1860622693",
+      "spotify": "https://open.spotify.com/album/7vxKlCXyrTTxrK9emUjyiW?si=OWu6HepBTri1vd6M33isfQ",
+      "amazon": "https://music.amazon.com/albums/B0G53TV3JT?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_YABte8KDsQEMg8xDFHTmoY77w",
+      "boomplay": "https://www.boomplay.com/songs/EQuVNtQmqUPtdfH3VwLSp2nw?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 14, 
+    "title": "Эдем. Она", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Ambient", 
+    "cover": "She and He .jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/album/%D1%8D%D0%B4%D0%B5%D0%BC-%D0%BE%D0%BD%D0%B0-single/1860464780",
+      "spotify": "https://open.spotify.com/album/1lUDydPDbOBqeU50BmSEBU?si=HK_Q8wv1Ta6XDytf2RN8GA",
+      "amazon": "https://music.amazon.com/albums/B0G51JPJQN?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_sVl35qyeeiJN6DJy38QA8xR17",
+      "boomplay": "https://www.boomplay.com/songs/EQtlALCoSAaLMT5Kb7Q645fg?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 15, 
+    "title": "Храм Тишины", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Meditation / Ambient", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/album/%D1%85%D1%80%D0%B0%D0%BC-%D1%82%D0%B8%D1%88%D0%B8%D0%BD%D1%8B-single/1856488564",
+      "spotify": "https://open.spotify.com/album/6dAwoVTKCsVEixM41soTpU?si=yrSSwoKNQZGLYPHwLWXwJw",
+      "amazon": "https://music.amazon.com/albums/B0G2L4KS79?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_To8Oq9gJvMC5wIAfAIAWbfOWe",
+      "boomplay": "https://www.boomplay.com/songs/EQuOW8QKJtxDIRAsirDAXhV8?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 16, 
+    "title": "The Temple of Silence", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Meditation / Ambient", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/album/the-temple-of-silence-single/1856403144",
+      "spotify": "https://open.spotify.com/track/50CGOMqbwUqi5qCBnG7sro?si=8c37bac96afe4520",
+      "amazon": "https://music.amazon.com/albums/B0G2FRJ2FT?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_dcWSLzkhsX7MSLQbglrl323uF",
+      "boomplay": "https://www.boomplay.com/songs/EQt-csbBd5pQ27PoKieZ88cE?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 17, 
+    "title": "Незабудка", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Cinematic", 
+    "cover": "Nezabudka dokkino.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/song/%D0%BD%D0%B5%D0%B7%D0%B0%D0%B1%D1%83%D0%B4%D0%BA%D0%B0/1851158480",
+      "spotify": "https://open.spotify.com/album/4HjBIqcdPbOOMD29RGo2bL?si=ssJTrXx9R9SZXgy_y4W6qg",
+      "amazon": "https://music.amazon.com/albums/B0FYDW2L89?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_5BT5lIctrT0036lJ13z7quQaz",
+      "boomplay": "https://www.boomplay.com/songs/EQti5qfHqTsHVFB4uF2FdPrx?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 18, 
+    "title": "Осенний диалог", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Ambient", 
+    "cover": "2 Autumn Dialogue.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/song/%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9-%D0%B4%D0%B8%D0%B0%D0%BB%D0%BE%D0%B3/1850901222",
+      "spotify": "https://open.spotify.com/album/5F9Z1KacKo3XATD4ErZU66?si=f2ZaOGQpTGOvXROpR7Q_2w",
+      "amazon": "https://music.amazon.com/albums/B0FY5YS4JM?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_QFKpmQBApyI9bswY5RAJIVCy8",
+      "boomplay": "https://www.boomplay.com/songs/EQtbHZLzlja3KptXLnw7bgGd?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 19, 
+    "title": "Мы подходим друг другу", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Deep House", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/song/%D0%BC%D1%8B-%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%B8%D0%BC-%D0%B4%D1%80%D1%83%D0%B3-%D0%B4%D1%80%D1%83%D0%B3%D1%83/1850898232",
+      "spotify": "https://open.spotify.com/album/5vRxKrNFaIxRQDORwgmVQE?si=bkwdc9acScK3YHXeeBYdSA",
+      "amazon": "https://music.amazon.com/albums/B0FY5R9L3Q?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_A2uunG2REKS99gjo5Cv8bjs6l",
+      "boomplay": "https://www.boomplay.com/songs/EQsntmprigMZgyyzldrFAWFk?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 20, 
+    "title": "Любовь не спорит", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Vocal / Ambient", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/song/%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2%D1%8C-%D0%BD%D0%B5-%D1%81%D0%BF%D0%BE%D1%80%D0%B8%D1%82/1850780522",
+      "spotify": "https://open.spotify.com/album/6L1GagegR84PdDwyvLXraF?si=mujyY-dlTxaE070Im1rrgQ",
+      "amazon": "https://music.amazon.com/albums/B0FY3Z1VPB?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_DmYoQRI4wRnME39aU8wBZ70dQ",
+      "boomplay": "https://www.boomplay.com/songs/EQuPjhpcM7DY3RjXQSp-qUod?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 21, 
+    "title": "Луна", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Ambient", 
+    "cover": "Луна.jpg",
+    "links": {
+      "apple": "https://music.apple.com/us/song/%D0%BB%D1%83%D0%BD%D0%B0/1850106696",
+      "spotify": "https://open.spotify.com/album/3iMFc3Po4oDIV68iK20Z3t?si=aA7LOy4VSRenvH67WD4N5w",
+      "amazon": "https://music.amazon.com/albums/B0FXRCV8Y5?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_Haw7WEacF6AWMN2REtc4Z76TH",
+      "boomplay": "https://www.boomplay.com/songs/EQuuqlB0kMGwhPXmfmYRpgIl?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  },
+  {
+    "id": 22, 
+    "title": "Несмиренная", 
+    "type": "Single", 
+    "year": 2025, 
+    "genre": "Cinematic", 
+    "cover": "",
+    "links": {
+      "apple": "https://music.apple.com/us/song/%D0%BD%D0%B5%D1%81%D0%BC%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F/1850101705",
+      "spotify": "https://open.spotify.com/album/5dNzYC0q7b8DvBYAIp6paz?si=JZWv25f2T5-tbVKfuS3HRw",
+      "amazon": "https://music.amazon.com/albums/B0FXRFK7LS?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_zYC5XmfTdcl2Gq9r8wflbMy1f",
+      "boomplay": "https://www.boomplay.com/songs/EQvlS1Qnpmo-a70cRoKvMMmy?srModel=COPYLINK&srList=WEB&share_content=music&share_channel=copylink&share_platform=web"
+    }
+  }
 ];
 
 let currentLang = 'ru';
 
-// Рендер списка треков
 function renderTracks() {
   const container = document.getElementById('tracksContainer');
   container.innerHTML = '';
@@ -244,8 +521,6 @@ function renderTracks() {
     card.onclick = () => openTrack(track.id);
 
     const actionText = currentLang === 'ru' ? 'Подробнее &rarr;' : 'Details &rarr;';
-    
-    // Если обложка есть — используем её, иначе стильную цветную заглушку
     const coverSrc = track.cover ? encodeURI(track.cover) : `https://via.placeholder.com/150/F5F0EB/C59B27?text=${encodeURIComponent(track.title.charAt(0))}`;
 
     card.innerHTML = `
@@ -262,7 +537,6 @@ function renderTracks() {
   });
 }
 
-// Открытие карточки трека
 function openTrack(trackId) {
   const track = tracksData.find(t => t.id === trackId);
   if (!track) return;
@@ -273,6 +547,35 @@ function openTrack(trackId) {
   document.getElementById('detailTitle').innerText = track.title;
   document.getElementById('detailGenre').innerText = track.genre;
   document.getElementById('detailSub').innerText = `dokkino • ${track.type} • ${track.year}`;
+
+  const grid = document.getElementById('platformsGrid');
+  grid.innerHTML = '';
+  
+  const platformNames = {
+    apple: 'Apple Music',
+    spotify: 'Spotify',
+    amazon: 'Amazon Music',
+    boomplay: 'Boomplay'
+  };
+
+  let hasLinks = false;
+  if (track.links) {
+    for (const [plat, url] of Object.entries(track.links)) {
+      if (url && url.trim() !== '') {
+        hasLinks = true;
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.className = 'platform-btn';
+        a.innerText = platformNames[plat] || plat;
+        grid.appendChild(a);
+      }
+    }
+  }
+
+  if (!hasLinks) {
+    grid.innerHTML = `<div style="grid-column: 1/-1; color: var(--text-secondary); font-size: 14px;">${currentLang === 'ru' ? 'Ссылки на стриминги скоро появятся.' : 'Streaming links coming soon.'}</div>`;
+  }
 
   const descBox = document.getElementById('detailDescription');
   if (currentLang === 'ru') {
@@ -289,7 +592,6 @@ function openTrack(trackId) {
   }, 200);
 }
 
-// Возврат к списку
 function closeTrack() {
   document.getElementById('detailView').classList.remove('active');
   setTimeout(() => {
@@ -299,7 +601,6 @@ function closeTrack() {
   }, 200);
 }
 
-// Переключение языков
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('dokkino_lang', lang);
