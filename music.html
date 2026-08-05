@@ -165,7 +165,6 @@
 
     <div class="cw-section-label" data-ru="Релизы" data-en="Releases">Релизы</div>
     
-    <!-- Сюда JS автоматически вставит все 22 трека -->
     <div class="track-list" id="tracksContainer"></div>
   </div>
 
@@ -195,9 +194,7 @@
     </div>
 
     <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
-    <div class="cw-intro" id="detailDescription">
-      <!-- Динамическое описание трека -->
-    </div>
+    <div class="cw-intro" id="detailDescription"></div>
 
   </div>
 
@@ -208,30 +205,30 @@
 </div>
 
 <script>
-// Список всех треков
+// Список всех треков с привязанными файлами обложек
 const tracksData = [
-  {"id": 1, "title": "We Are Eternity", "type": "Single", "year": 2026, "genre": "Ambient / Cinematic"},
-  {"id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": "Deep House / Ambient"},
-  {"id": 3, "title": "Eden She and He", "type": "Single", "year": 2025, "genre": "Ambient"},
-  {"id": 4, "title": "Created by Him", "type": "Single", "year": 2025, "genre": "Cinematic"},
-  {"id": 5, "title": "Falling Into You", "type": "Single", "year": 2025, "genre": "Deep House"},
-  {"id": 6, "title": "Transitions (Female Vocal Version)", "type": "Single", "year": 2025, "genre": "Vocal Ambient"},
-  {"id": 7, "title": "Transitions (Original Version)", "type": "Single", "year": 2025, "genre": "Ambient"},
-  {"id": 8, "title": "Moon Returns", "type": "Single", "year": 2025, "genre": "Cinematic / Ambient"},
-  {"id": 9, "title": "Autumn Dialogue", "type": "Single", "year": 2025, "genre": "Ambient"},
-  {"id": 10, "title": "Song of Infinity", "type": "Single", "year": 2025, "genre": "Electronic"},
-  {"id": 11, "title": "Song of Infinity (Alternate Mix)", "type": "Single", "year": 2025, "genre": "Electronic"},
-  {"id": 12, "title": "Song of Infinity (Extended Alternate Mix)", "type": "Single", "year": 2025, "genre": "Extended Mix"},
-  {"id": 13, "title": "Эдем. Он", "type": "Single", "year": 2025, "genre": "Deep House / Ambient"},
-  {"id": 14, "title": "Эдем. Она", "type": "Single", "year": 2025, "genre": "Ambient"},
-  {"id": 15, "title": "Храм Тишины", "type": "Single", "year": 2025, "genre": "Meditation / Ambient"},
-  {"id": 16, "title": "The Temple of Silence", "type": "Single", "year": 2025, "genre": "Meditation / Ambient"},
-  {"id": 17, "title": "Незабудка", "type": "Single", "year": 2025, "genre": "Cinematic"},
-  {"id": 18, "title": "Осенний диалог", "type": "Single", "year": 2025, "genre": "Ambient"},
-  {"id": 19, "title": "Мы подходим друг другу", "type": "Single", "year": 2025, "genre": "Deep House"},
-  {"id": 20, "title": "Любовь не спорит", "type": "Single", "year": 2025, "genre": "Vocal / Ambient"},
-  {"id": 21, "title": "Луна", "type": "Single", "year": 2025, "genre": "Ambient"},
-  {"id": 22, "title": "Несмиренная", "type": "Single", "year": 2025, "genre": "Cinematic"}
+  {"id": 1, "title": "We Are Eternity", "type": "Single", "year": 2026, "genre": "Ambient / Cinematic", "cover": "We Are Eternity.jpg"},
+  {"id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": "Deep House / Ambient", "cover": "Eden He.jpg"},
+  {"id": 3, "title": "Eden She and He", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "She and He .jpg"},
+  {"id": 4, "title": "Created by Him", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": "Created by Him.jpg"},
+  {"id": 5, "title": "Falling Into You", "type": "Single", "year": 2025, "genre": "Deep House", "cover": ""},
+  {"id": 6, "title": "Transitions (Female Vocal Version)", "type": "Single", "year": 2025, "genre": "Vocal Ambient", "cover": "Transitions (Женский вокал Version).jpg"},
+  {"id": 7, "title": "Transitions (Original Version)", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "Transitions (Мужской вокал Version).jpg"},
+  {"id": 8, "title": "Moon Returns", "type": "Single", "year": 2025, "genre": "Cinematic / Ambient", "cover": "Moon Returns.jpg"},
+  {"id": 9, "title": "Autumn Dialogue", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "2 Autumn Dialogue.jpg"},
+  {"id": 10, "title": "Song of Infinity", "type": "Single", "year": 2025, "genre": "Electronic", "cover": ""},
+  {"id": 11, "title": "Song of Infinity (Alternate Mix)", "type": "Single", "year": 2025, "genre": "Electronic", "cover": ""},
+  {"id": 12, "title": "Song of Infinity (Extended Alternate Mix)", "type": "Single", "year": 2025, "genre": "Extended Mix", "cover": ""},
+  {"id": 13, "title": "Эдем. Он", "type": "Single", "year": 2025, "genre": "Deep House / Ambient", "cover": "Eden He.jpg"},
+  {"id": 14, "title": "Эдем. Она", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "She and He .jpg"},
+  {"id": 15, "title": "Храм Тишины", "type": "Single", "year": 2025, "genre": "Meditation / Ambient", "cover": ""},
+  {"id": 16, "title": "The Temple of Silence", "type": "Single", "year": 2025, "genre": "Meditation / Ambient", "cover": ""},
+  {"id": 17, "title": "Незабудка", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": "Nezabudka dokkino.jpg"},
+  {"id": 18, "title": "Осенний диалог", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "2 Autumn Dialogue.jpg"},
+  {"id": 19, "title": "Мы подходим друг другу", "type": "Single", "year": 2025, "genre": "Deep House", "cover": ""},
+  {"id": 20, "title": "Любовь не спорит", "type": "Single", "year": 2025, "genre": "Vocal / Ambient", "cover": ""},
+  {"id": 21, "title": "Луна", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "Moon Returns.jpg"},
+  {"id": 22, "title": "Несмиренная", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": ""}
 ];
 
 let currentLang = 'ru';
@@ -247,10 +244,13 @@ function renderTracks() {
     card.onclick = () => openTrack(track.id);
 
     const actionText = currentLang === 'ru' ? 'Подробнее &rarr;' : 'Details &rarr;';
+    
+    // Если обложка есть — используем её, иначе стильную цветную заглушку
+    const coverSrc = track.cover ? encodeURI(track.cover) : `https://via.placeholder.com/150/F5F0EB/C59B27?text=${encodeURIComponent(track.title.charAt(0))}`;
 
     card.innerHTML = `
       <div class="track-info-left">
-        <img src="https://via.placeholder.com/150/F5F0EB/C59B27?text=${encodeURIComponent(track.title.charAt(0))}" alt="Cover" class="track-cover-sm">
+        <img src="${coverSrc}" alt="${track.title}" class="track-cover-sm" onerror="this.src='https://via.placeholder.com/150/F5F0EB/C59B27?text=Art'">
         <div class="track-titles">
           <div class="track-name">${track.title}</div>
           <div class="track-meta">${track.type} &bull; ${track.year}</div>
@@ -267,7 +267,9 @@ function openTrack(trackId) {
   const track = tracksData.find(t => t.id === trackId);
   if (!track) return;
 
-  document.getElementById('detailCover').src = `https://via.placeholder.com/300/F5F0EB/C59B27?text=${encodeURIComponent(track.title)}`;
+  const coverSrc = track.cover ? encodeURI(track.cover) : `https://via.placeholder.com/300/F5F0EB/C59B27?text=${encodeURIComponent(track.title)}`;
+
+  document.getElementById('detailCover').src = coverSrc;
   document.getElementById('detailTitle').innerText = track.title;
   document.getElementById('detailGenre').innerText = track.genre;
   document.getElementById('detailSub').innerText = `dokkino • ${track.type} • ${track.year}`;
