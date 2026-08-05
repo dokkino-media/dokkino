@@ -6,20 +6,144 @@
 <title>dokkino music</title>
 <style>
   :root {
-    --bg-main: #FDFBF7; --card-bg: #F5F0EB; --card-border: #E6DFD5;
-    --text-primary: #1A1918; --text-secondary: #5C5852; --gold-accent: #C59B27;
+    --bg-main: #FDFBF7; 
+    --card-bg: #F5F0EB; 
+    --card-border: #E6DFD5;
+    --text-primary: #1A1918; 
+    --text-secondary: #5C5852; 
+    --gold-accent: #C59B27;
+    --gold-hover: #a8821d;
   }
-  body { background-color: var(--bg-main); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 40px 20px 60px; box-sizing: border-box; }
-  .lang-switch { text-align: right; max-width: 1100px; margin: 0 auto 20px; font-size: 14px; font-weight: 600; }
+  
+  * { box-sizing: border-box; }
+  
+  body { 
+    background-color: var(--bg-main); 
+    color: var(--text-primary); 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    margin: 0; 
+    padding: 40px 20px 60px; 
+  }
+
+  .lang-switch { text-align: right; max-width: 900px; margin: 0 auto 20px; font-size: 14px; font-weight: 600; }
   .lang-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 4px 8px; font-size: 14px; font-weight: 600; }
   .lang-btn.active { color: var(--gold-accent); text-decoration: underline; }
-  .dm-container { max-width: 1100px; margin: 0 auto; }
-  .dm-back { display: inline-block; font-size: 13px; color: var(--text-secondary); text-decoration: none; margin-bottom: 30px; }
-  .dm-back:hover { color: var(--gold-accent); }
-  .dm-eyebrow { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-accent); font-weight: 600; margin-bottom: 10px; }
-  .dm-title { font-size: 40px; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 16px 0; }
-  .dm-intro { font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 640px; margin: 0 0 60px 0; }
-  .empty-state { background-color: var(--card-bg); border: 1px dashed var(--card-border); border-radius: 16px; padding: 40px; text-align: center; color: var(--text-secondary); font-size: 14px; }
+
+  .cw-container { max-width: 900px; margin: 0 auto; }
+  .cw-back { display: inline-block; font-size: 13px; color: var(--text-secondary); text-decoration: none; margin-bottom: 24px; cursor: pointer; transition: color 0.2s; }
+  .cw-back:hover { color: var(--gold-accent); }
+
+  .cw-pen-name { font-size: 14px; letter-spacing: 1px; text-transform: lowercase; color: var(--gold-accent); font-weight: 600; margin-bottom: 8px; }
+  .cw-title { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 8px 0; line-height: 1.25; }
+  .cw-subtitle { font-size: 16px; font-weight: 500; color: var(--text-secondary); margin-bottom: 32px; }
+
+  /* Переключение видов */
+  .view { display: none; opacity: 0; transition: opacity 0.25s ease-in-out; }
+  .view.active { display: block; opacity: 1; }
+
+  /* Список треков */
+  .track-list { display: flex; flex-direction: column; gap: 12px; }
+  .track-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .track-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold-accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+  .track-info-left { display: flex; align-items: center; gap: 16px; }
+  .track-cover-sm {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: var(--card-border);
+    flex-shrink: 0;
+  }
+  .track-titles { display: flex; flex-direction: column; gap: 4px; }
+  .track-name { font-size: 17px; font-weight: 600; color: var(--text-primary); }
+  .track-meta { font-size: 13px; color: var(--text-secondary); }
+  .track-action { font-size: 13px; font-weight: 600; color: var(--gold-accent); display: flex; align-items: center; gap: 6px; }
+
+  /* Детальная страница трека */
+  .detail-header {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 36px;
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+  }
+  @media (max-width: 600px) {
+    .detail-header { flex-direction: column; align-items: center; text-align: center; }
+  }
+  .detail-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    background-color: var(--card-border);
+    flex-shrink: 0;
+  }
+  .detail-meta-box { display: flex; flex-direction: column; justify-content: center; }
+  .detail-title { font-size: 28px; font-weight: 700; margin: 0 0 8px 0; }
+  .detail-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+  .detail-genre { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(197, 155, 39, 0.15); color: var(--gold-accent); padding: 4px 10px; border-radius: 6px; width: fit-content; }
+
+  /* Стриминговые платформы */
+  .platforms-section { margin-bottom: 36px; }
+  .cw-section-label { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
+  
+  .platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .platform-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .platform-btn:hover {
+    border-color: var(--gold-accent);
+    color: var(--gold-accent);
+    transform: translateY(-1px);
+  }
+
+  /* Описание трека */
+  .cw-intro { 
+    font-size: 15px; 
+    line-height: 1.8; 
+    color: var(--text-secondary); 
+    margin-bottom: 40px; 
+    background: var(--card-bg); 
+    padding: 28px; 
+    border-radius: 16px; 
+    border: 1px solid var(--card-border); 
+  }
+  .cw-intro p { margin: 0 0 16px 0; }
+  .cw-intro p:last-child { margin-bottom: 0; }
+
   footer { border-top: 1px solid var(--card-border); margin-top: 60px; padding-top: 24px; text-align: center; font-size: 12px; color: #9E988F; }
 </style>
 </head>
@@ -30,27 +154,152 @@
   <button class="lang-btn" onclick="setLanguage('en')">EN</button>
 </div>
 
-<div class="dm-container">
-  <a href="index.html" class="dm-back">&larr; dokkino</a>
-  <div class="dm-eyebrow">dokkino music</div>
-  <h1 class="dm-title" data-ru="Атмосферная музыка с элементами ИИ" data-en="Atmospheric music powered by AI">Атмосферная музыка с элементами ИИ</h1>
-  <p class="dm-intro" data-ru="Ambient, cinematic и deep house. Библиотека будет заполняться треками по одному." data-en="Ambient, cinematic, and deep house. Tracks will be added one by one.">Ambient, cinematic и deep house. Библиотека будет заполняться треками по одному.</p>
-  <div class="empty-state" data-ru="Библиотека скоро появится." data-en="Library coming soon.">Библиотека скоро появится.</div>
+<div class="cw-container">
+
+  <!-- ================= VIEW 1: СПИСОК ТРЕКОВ ================= -->
+  <div id="listView" class="view active">
+    <a href="index.html" class="cw-back">&larr; dokkino</a>
+    <div class="cw-pen-name">dokkino music</div>
+    <h1 class="cw-title" data-ru="Музыка" data-en="Music">Музыка</h1>
+    <div class="cw-subtitle" data-ru="Дискография и истории создания треков" data-en="Discography and background stories">Дискография и истории создания треков</div>
+
+    <div class="cw-section-label" data-ru="Релизы" data-en="Releases">Релизы</div>
+    
+    <div class="track-list">
+      
+      <!-- Трек 1 -->
+      <div class="track-card" onclick="openTrack('track-1')">
+        <div class="track-info-left">
+          <img src="https://via.placeholder.com/150/F5F0EB/C59B27?text=Art" alt="Cover" class="track-cover-sm">
+          <div class="track-titles">
+            <div class="track-name">Название Первого Трека</div>
+            <div class="track-meta">Single &bull; 2026</div>
+          </div>
+        </div>
+        <div class="track-action" data-ru="Подробнее &rarr;" data-en="Details &rarr;">Подробнее &rarr;</div>
+      </div>
+
+      <!-- Трек 2 -->
+      <div class="track-card" onclick="openTrack('track-2')">
+        <div class="track-info-left">
+          <img src="https://via.placeholder.com/150/F5F0EB/C59B27?text=Art" alt="Cover" class="track-cover-sm">
+          <div class="track-titles">
+            <div class="track-name">Название Второго Трека</div>
+            <div class="track-meta">Single &bull; 2025</div>
+          </div>
+        </div>
+        <div class="track-action" data-ru="Подробнее &rarr;" data-en="Details &rarr;">Подробнее &rarr;</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= VIEW 2: ДЕТАЛИ ТРЕКА ================= -->
+  <div id="detailView" class="view">
+    <div class="cw-back" onclick="closeTrack()" data-ru="&larr; Назад к музыке" data-en="&larr; Back to music">&larr; Назад к музыке</div>
+    
+    <!-- Трек 1 Контент -->
+    <div id="track-1" class="track-detail-content" style="display:none;">
+      <div class="detail-header">
+        <img src="https://via.placeholder.com/300/F5F0EB/C59B27?text=Cover+1" alt="Cover" class="detail-cover">
+        <div class="detail-meta-box">
+          <div class="detail-genre">Indie / Electronic</div>
+          <h1 class="detail-title">Название Первого Трека</h1>
+          <div class="detail-sub">dokkino &bull; Single &bull; 2026</div>
+        </div>
+      </div>
+
+      <div class="platforms-section">
+        <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
+        <div class="platforms-grid">
+          <a href="https://music.apple.com" target="_blank" class="platform-btn">Apple Music</a>
+          <a href="https://spotify.com" target="_blank" class="platform-btn">Spotify</a>
+          <a href="https://music.yandex.ru" target="_blank" class="platform-btn">Яндекс Музыка</a>
+          <a href="https://music.youtube.com" target="_blank" class="platform-btn">YouTube Music</a>
+          <a href="https://vk.com/audio" target="_blank" class="platform-btn">VK Музыка</a>
+        </div>
+      </div>
+
+      <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
+      <div class="cw-intro">
+        <p data-ru="Здесь размещается подробное описание истории создания песни, её смысла, атмосферы или лирики." data-en="Here goes the detailed background story of the track, its meaning, mood, or lyrics.">Здесь размещается подробное описание истории создания песни, её смысла, атмосферы или лирики.</p>
+        <p data-ru="Второй абзац с дополнительными деталями, вдохновением или разбором строк." data-en="Second paragraph with additional insights, inspiration, or line analysis.">Второй абзац с дополнительными деталями, вдохновением или разбором строк.</p>
+      </div>
+    </div>
+
+    <!-- Трек 2 Контент -->
+    <div id="track-2" class="track-detail-content" style="display:none;">
+      <div class="detail-header">
+        <img src="https://via.placeholder.com/300/F5F0EB/C59B27?text=Cover+2" alt="Cover" class="detail-cover">
+        <div class="detail-meta-box">
+          <div class="detail-genre">Ambient / Synth</div>
+          <h1 class="detail-title">Название Второго Трека</h1>
+          <div class="detail-sub">dokkino &bull; Single &bull; 2025</div>
+        </div>
+      </div>
+
+      <div class="platforms-section">
+        <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
+        <div class="platforms-grid">
+          <a href="https://music.apple.com" target="_blank" class="platform-btn">Apple Music</a>
+          <a href="https://spotify.com" target="_blank" class="platform-btn">Spotify</a>
+          <a href="https://music.yandex.ru" target="_blank" class="platform-btn">Яндекс Музыка</a>
+        </div>
+      </div>
+
+      <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
+      <div class="cw-intro">
+        <p data-ru="Описание второго трека и задумки композиции." data-en="Description of the second track and the musical concept.">Описание второго трека и задумки композиции.</p>
+      </div>
+    </div>
+
+  </div>
 
   <footer>
     <div data-ru="&copy; 2026 DOKKINO MEDIA LIMITED. Все права защищены." data-en="&copy; 2026 DOKKINO MEDIA LIMITED. All rights reserved.">&copy; 2026 DOKKINO MEDIA LIMITED. Все права защищены.</div>
   </footer>
+
 </div>
 
 <script>
+// Переключение языков
 function setLanguage(lang) {
   localStorage.setItem('dokkino_lang', lang);
   document.querySelectorAll('[data-ru]').forEach(el => {
-    el.innerHTML = el.getAttribute('data-' + lang);
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.innerHTML = text;
   });
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
   });
+}
+
+// Открытие страницы конкретного трека
+function openTrack(trackId) {
+  document.querySelectorAll('.track-detail-content').forEach(el => el.style.display = 'none');
+  
+  const selectedTrack = document.getElementById(trackId);
+  if (selectedTrack) {
+    selectedTrack.style.display = 'block';
+    
+    document.getElementById('listView').classList.remove('active');
+    setTimeout(() => {
+      document.getElementById('listView').style.display = 'none';
+      document.getElementById('detailView').style.display = 'block';
+      setTimeout(() => document.getElementById('detailView').classList.add('active'), 20);
+    }, 200);
+  }
+}
+
+// Возврат к списку треков
+function closeTrack() {
+  document.getElementById('detailView').classList.remove('active');
+  setTimeout(() => {
+    document.getElementById('detailView').style.display = 'none';
+    document.getElementById('listView').style.display = 'block';
+    setTimeout(() => document.getElementById('listView').classList.add('active'), 20);
+  }, 200);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
