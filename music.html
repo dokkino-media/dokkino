@@ -165,33 +165,8 @@
 
     <div class="cw-section-label" data-ru="Релизы" data-en="Releases">Релизы</div>
     
-    <div class="track-list">
-      
-      <!-- Трек 1 -->
-      <div class="track-card" onclick="openTrack('track-1')">
-        <div class="track-info-left">
-          <img src="https://via.placeholder.com/150/F5F0EB/C59B27?text=Art" alt="Cover" class="track-cover-sm">
-          <div class="track-titles">
-            <div class="track-name">Название Первого Трека</div>
-            <div class="track-meta">Single &bull; 2026</div>
-          </div>
-        </div>
-        <div class="track-action" data-ru="Подробнее &rarr;" data-en="Details &rarr;">Подробнее &rarr;</div>
-      </div>
-
-      <!-- Трек 2 -->
-      <div class="track-card" onclick="openTrack('track-2')">
-        <div class="track-info-left">
-          <img src="https://via.placeholder.com/150/F5F0EB/C59B27?text=Art" alt="Cover" class="track-cover-sm">
-          <div class="track-titles">
-            <div class="track-name">Название Второго Трека</div>
-            <div class="track-meta">Single &bull; 2025</div>
-          </div>
-        </div>
-        <div class="track-action" data-ru="Подробнее &rarr;" data-en="Details &rarr;">Подробнее &rarr;</div>
-      </div>
-
-    </div>
+    <!-- Сюда JS автоматически вставит все 22 трека -->
+    <div class="track-list" id="tracksContainer"></div>
   </div>
 
 
@@ -199,59 +174,29 @@
   <div id="detailView" class="view">
     <div class="cw-back" onclick="closeTrack()" data-ru="&larr; Назад к музыке" data-en="&larr; Back to music">&larr; Назад к музыке</div>
     
-    <!-- Трек 1 Контент -->
-    <div id="track-1" class="track-detail-content" style="display:none;">
-      <div class="detail-header">
-        <img src="https://via.placeholder.com/300/F5F0EB/C59B27?text=Cover+1" alt="Cover" class="detail-cover">
-        <div class="detail-meta-box">
-          <div class="detail-genre">Indie / Electronic</div>
-          <h1 class="detail-title">Название Первого Трека</h1>
-          <div class="detail-sub">dokkino &bull; Single &bull; 2026</div>
-        </div>
-      </div>
-
-      <div class="platforms-section">
-        <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
-        <div class="platforms-grid">
-          <a href="https://music.apple.com" target="_blank" class="platform-btn">Apple Music</a>
-          <a href="https://spotify.com" target="_blank" class="platform-btn">Spotify</a>
-          <a href="https://music.yandex.ru" target="_blank" class="platform-btn">Яндекс Музыка</a>
-          <a href="https://music.youtube.com" target="_blank" class="platform-btn">YouTube Music</a>
-          <a href="https://vk.com/audio" target="_blank" class="platform-btn">VK Музыка</a>
-        </div>
-      </div>
-
-      <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
-      <div class="cw-intro">
-        <p data-ru="Здесь размещается подробное описание истории создания песни, её смысла, атмосферы или лирики." data-en="Here goes the detailed background story of the track, its meaning, mood, or lyrics.">Здесь размещается подробное описание истории создания песни, её смысла, атмосферы или лирики.</p>
-        <p data-ru="Второй абзац с дополнительными деталями, вдохновением или разбором строк." data-en="Second paragraph with additional insights, inspiration, or line analysis.">Второй абзац с дополнительными деталями, вдохновением или разбором строк.</p>
+    <div class="detail-header">
+      <img id="detailCover" src="" alt="Cover" class="detail-cover">
+      <div class="detail-meta-box">
+        <div class="detail-genre" id="detailGenre">Ambient / Electronic</div>
+        <h1 class="detail-title" id="detailTitle"></h1>
+        <div class="detail-sub" id="detailSub">dokkino &bull; Single</div>
       </div>
     </div>
 
-    <!-- Трек 2 Контент -->
-    <div id="track-2" class="track-detail-content" style="display:none;">
-      <div class="detail-header">
-        <img src="https://via.placeholder.com/300/F5F0EB/C59B27?text=Cover+2" alt="Cover" class="detail-cover">
-        <div class="detail-meta-box">
-          <div class="detail-genre">Ambient / Synth</div>
-          <h1 class="detail-title">Название Второго Трека</h1>
-          <div class="detail-sub">dokkino &bull; Single &bull; 2025</div>
-        </div>
+    <div class="platforms-section">
+      <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
+      <div class="platforms-grid">
+        <a href="https://music.apple.com" target="_blank" class="platform-btn">Apple Music</a>
+        <a href="https://spotify.com" target="_blank" class="platform-btn">Spotify</a>
+        <a href="https://music.yandex.ru" target="_blank" class="platform-btn">Яндекс Музыка</a>
+        <a href="https://music.youtube.com" target="_blank" class="platform-btn">YouTube Music</a>
+        <a href="https://vk.com/audio" target="_blank" class="platform-btn">VK Музыка</a>
       </div>
+    </div>
 
-      <div class="platforms-section">
-        <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
-        <div class="platforms-grid">
-          <a href="https://music.apple.com" target="_blank" class="platform-btn">Apple Music</a>
-          <a href="https://spotify.com" target="_blank" class="platform-btn">Spotify</a>
-          <a href="https://music.yandex.ru" target="_blank" class="platform-btn">Яндекс Музыка</a>
-        </div>
-      </div>
-
-      <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
-      <div class="cw-intro">
-        <p data-ru="Описание второго трека и задумки композиции." data-en="Description of the second track and the musical concept.">Описание второго трека и задумки композиции.</p>
-      </div>
+    <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
+    <div class="cw-intro" id="detailDescription">
+      <!-- Динамическое описание трека -->
     </div>
 
   </div>
@@ -263,36 +208,86 @@
 </div>
 
 <script>
-// Переключение языков
-function setLanguage(lang) {
-  localStorage.setItem('dokkino_lang', lang);
-  document.querySelectorAll('[data-ru]').forEach(el => {
-    const text = el.getAttribute('data-' + lang);
-    if (text) el.innerHTML = text;
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+// Список всех треков
+const tracksData = [
+  {"id": 1, "title": "We Are Eternity", "type": "Single", "year": 2026, "genre": "Ambient / Cinematic"},
+  {"id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": "Deep House / Ambient"},
+  {"id": 3, "title": "Eden She and He", "type": "Single", "year": 2025, "genre": "Ambient"},
+  {"id": 4, "title": "Created by Him", "type": "Single", "year": 2025, "genre": "Cinematic"},
+  {"id": 5, "title": "Falling Into You", "type": "Single", "year": 2025, "genre": "Deep House"},
+  {"id": 6, "title": "Transitions (Female Vocal Version)", "type": "Single", "year": 2025, "genre": "Vocal Ambient"},
+  {"id": 7, "title": "Transitions (Original Version)", "type": "Single", "year": 2025, "genre": "Ambient"},
+  {"id": 8, "title": "Moon Returns", "type": "Single", "year": 2025, "genre": "Cinematic / Ambient"},
+  {"id": 9, "title": "Autumn Dialogue", "type": "Single", "year": 2025, "genre": "Ambient"},
+  {"id": 10, "title": "Song of Infinity", "type": "Single", "year": 2025, "genre": "Electronic"},
+  {"id": 11, "title": "Song of Infinity (Alternate Mix)", "type": "Single", "year": 2025, "genre": "Electronic"},
+  {"id": 12, "title": "Song of Infinity (Extended Alternate Mix)", "type": "Single", "year": 2025, "genre": "Extended Mix"},
+  {"id": 13, "title": "Эдем. Он", "type": "Single", "year": 2025, "genre": "Deep House / Ambient"},
+  {"id": 14, "title": "Эдем. Она", "type": "Single", "year": 2025, "genre": "Ambient"},
+  {"id": 15, "title": "Храм Тишины", "type": "Single", "year": 2025, "genre": "Meditation / Ambient"},
+  {"id": 16, "title": "The Temple of Silence", "type": "Single", "year": 2025, "genre": "Meditation / Ambient"},
+  {"id": 17, "title": "Незабудка", "type": "Single", "year": 2025, "genre": "Cinematic"},
+  {"id": 18, "title": "Осенний диалог", "type": "Single", "year": 2025, "genre": "Ambient"},
+  {"id": 19, "title": "Мы подходим друг другу", "type": "Single", "year": 2025, "genre": "Deep House"},
+  {"id": 20, "title": "Любовь не спорит", "type": "Single", "year": 2025, "genre": "Vocal / Ambient"},
+  {"id": 21, "title": "Луна", "type": "Single", "year": 2025, "genre": "Ambient"},
+  {"id": 22, "title": "Несмиренная", "type": "Single", "year": 2025, "genre": "Cinematic"}
+];
+
+let currentLang = 'ru';
+
+// Рендер списка треков
+function renderTracks() {
+  const container = document.getElementById('tracksContainer');
+  container.innerHTML = '';
+
+  tracksData.forEach(track => {
+    const card = document.createElement('div');
+    card.className = 'track-card';
+    card.onclick = () => openTrack(track.id);
+
+    const actionText = currentLang === 'ru' ? 'Подробнее &rarr;' : 'Details &rarr;';
+
+    card.innerHTML = `
+      <div class="track-info-left">
+        <img src="https://via.placeholder.com/150/F5F0EB/C59B27?text=${encodeURIComponent(track.title.charAt(0))}" alt="Cover" class="track-cover-sm">
+        <div class="track-titles">
+          <div class="track-name">${track.title}</div>
+          <div class="track-meta">${track.type} &bull; ${track.year}</div>
+        </div>
+      </div>
+      <div class="track-action">${actionText}</div>
+    `;
+    container.appendChild(card);
   });
 }
 
-// Открытие страницы конкретного трека
+// Открытие карточки трека
 function openTrack(trackId) {
-  document.querySelectorAll('.track-detail-content').forEach(el => el.style.display = 'none');
-  
-  const selectedTrack = document.getElementById(trackId);
-  if (selectedTrack) {
-    selectedTrack.style.display = 'block';
-    
-    document.getElementById('listView').classList.remove('active');
-    setTimeout(() => {
-      document.getElementById('listView').style.display = 'none';
-      document.getElementById('detailView').style.display = 'block';
-      setTimeout(() => document.getElementById('detailView').classList.add('active'), 20);
-    }, 200);
+  const track = tracksData.find(t => t.id === trackId);
+  if (!track) return;
+
+  document.getElementById('detailCover').src = `https://via.placeholder.com/300/F5F0EB/C59B27?text=${encodeURIComponent(track.title)}`;
+  document.getElementById('detailTitle').innerText = track.title;
+  document.getElementById('detailGenre').innerText = track.genre;
+  document.getElementById('detailSub').innerText = `dokkino • ${track.type} • ${track.year}`;
+
+  const descBox = document.getElementById('detailDescription');
+  if (currentLang === 'ru') {
+    descBox.innerHTML = `<p>Атмосферная композиция «${track.title}». История создания и концепция релиза появятся здесь в ближайшее время.</p>`;
+  } else {
+    descBox.innerHTML = `<p>Atmospheric composition "${track.title}". Background story and release concept will be available here soon.</p>`;
   }
+
+  document.getElementById('listView').classList.remove('active');
+  setTimeout(() => {
+    document.getElementById('listView').style.display = 'none';
+    document.getElementById('detailView').style.display = 'block';
+    setTimeout(() => document.getElementById('detailView').classList.add('active'), 20);
+  }, 200);
 }
 
-// Возврат к списку треков
+// Возврат к списку
 function closeTrack() {
   document.getElementById('detailView').classList.remove('active');
   setTimeout(() => {
@@ -300,6 +295,23 @@ function closeTrack() {
     document.getElementById('listView').style.display = 'block';
     setTimeout(() => document.getElementById('listView').classList.add('active'), 20);
   }, 200);
+}
+
+// Переключение языков
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('dokkino_lang', lang);
+  
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.innerHTML = text;
+  });
+  
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+  });
+
+  renderTracks();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
