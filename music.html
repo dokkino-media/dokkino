@@ -187,6 +187,9 @@
     <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
     <div class="cw-intro" id="detailDescription"></div>
 
+    <div class="cw-section-label" data-ru="Текст песни" data-en="Lyrics">Текст песни</div>
+    <div class="cw-intro" id="detailLyrics"></div>
+
   </div>
 
   <footer>
@@ -308,7 +311,9 @@ async function openTrack(trackId) {
 
 async function updateTrackDescription(track) {
   const descBox = document.getElementById('detailDescription');
+  const lyricsBox = document.getElementById('detailLyrics');
   descBox.innerHTML = `<p style="color: var(--text-secondary);">${currentLang === 'ru' ? 'Загрузка...' : 'Loading...'}</p>`;
+  lyricsBox.innerHTML = '';
 
   try {
     const response = await fetch(`tracks/${track.id}.json`);
@@ -316,8 +321,11 @@ async function updateTrackDescription(track) {
       const externalData = await response.json();
       if (externalData.description) {
         descBox.innerHTML = externalData.description[currentLang] || externalData.description['ru'] || '';
-        return;
       }
+      if (externalData.lyrics) {
+        lyricsBox.innerHTML = externalData.lyrics[currentLang] || externalData.lyrics['ru'] || '';
+      }
+      if (externalData.description || externalData.lyrics) return;
     }
     throw new Error('JSON not found');
   } catch (e) {
