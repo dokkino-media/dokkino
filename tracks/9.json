@@ -1,4 +1,8 @@
 {
+  "about": {
+    "en": "<p>Autumn Dialogue is a cinematic ambient composition where autumn becomes a living presence rather than a season. She walks through silent streets, watches people who have forgotten how to notice beauty, and quietly reminds them that every ending is part of a greater cycle. The song reflects on impermanence, memory, and the gentle transformation that accompanies every stage of life.</p>",
+    "ru": "<p>Autumn Dialogue — атмосферная композиция в жанре cinematic ambient, в которой осень становится не временем года, а живым существом. Она проходит по тихим улицам, наблюдает за людьми, забывшими замечать красоту вокруг, и ненавязчиво напоминает, что каждый конец — лишь часть большого жизненного цикла. Эта песня — размышление о мимолётности, памяти и тех тихих переменах, которые сопровождают каждый этап нашей жизни.</p>"
+  },
   "genreSub": ["Cinematic Indie Folk", "Atmospheric Folk"],
   "mood": ["Melancholic", "Warm", "Intimate", "Peaceful", "Nostalgic"],
   "themes": ["Autumn", "Memory", "Impermanence"],
