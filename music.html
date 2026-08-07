@@ -100,6 +100,9 @@
   .detail-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
   .detail-genre { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(197, 155, 39, 0.15); color: var(--gold-accent); padding: 4px 10px; border-radius: 6px; width: fit-content; }
 
+  /* Блок "О песне" (короткий, между обложкой и платформами) */
+  .about-section { margin-bottom: 36px; }
+
   /* Стриминговые платформы */
   .platforms-section { margin-bottom: 36px; }
   .cw-section-label { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
@@ -130,7 +133,7 @@
     transform: translateY(-1px);
   }
 
-  /* Описание трека */
+  /* Описание трека / текст песни */
   .cw-intro { 
     font-size: 15px; 
     line-height: 1.8; 
@@ -140,6 +143,8 @@
     padding: 28px; 
     border-radius: 16px; 
     border: 1px solid var(--card-border); 
+    position: relative;
+    overflow: hidden;
   }
   .cw-intro p { margin: 0 0 16px 0; }
   .cw-intro p:last-child { margin-bottom: 0; }
@@ -177,6 +182,12 @@
         <h1 class="detail-title" id="detailTitle"></h1>
         <div class="detail-sub" id="detailSub">dokkino • Single</div>
       </div>
+    </div>
+
+    <!-- НОВЫЙ БЛОК: короткое "О песне", между обложкой и кнопками платформ -->
+    <div class="about-section">
+      <div class="cw-section-label" data-ru="О песне" data-en="About the Song">О песне</div>
+      <div class="cw-intro" id="detailAbout"></div>
     </div>
 
     <div class="platforms-section">
@@ -310,25 +321,41 @@ async function openTrack(trackId) {
 }
 
 async function updateTrackDescription(track) {
+  const aboutBox = document.getElementById('detailAbout');
   const descBox = document.getElementById('detailDescription');
   const lyricsBox = document.getElementById('detailLyrics');
-  descBox.innerHTML = `<p style="color: var(--text-secondary);">${currentLang === 'ru' ? 'Загрузка...' : 'Loading...'}</p>`;
+  const loadingText = currentLang === 'ru' ? 'Загрузка...' : 'Loading...';
+
+  aboutBox.innerHTML = `<p style="color: var(--text-secondary); margin:0;">${loadingText}</p>`;
+  descBox.innerHTML = `<p style="color: var(--text-secondary);">${loadingText}</p>`;
   lyricsBox.innerHTML = '';
 
   try {
     const response = await fetch(`tracks/${track.id}.json`);
     if (response.ok) {
       const externalData = await response.json();
+      let foundAny = false;
+
+      if (externalData.about) {
+        aboutBox.innerHTML = externalData.about[currentLang] || externalData.about['ru'] || '';
+        foundAny = true;
+      } else {
+        aboutBox.innerHTML = '';
+      }
+
       if (externalData.description) {
         descBox.innerHTML = externalData.description[currentLang] || externalData.description['ru'] || '';
+        foundAny = true;
       }
       if (externalData.lyrics) {
         lyricsBox.innerHTML = externalData.lyrics[currentLang] || externalData.lyrics['ru'] || '';
+        foundAny = true;
       }
-      if (externalData.description || externalData.lyrics) return;
+      if (foundAny) return;
     }
     throw new Error('JSON not found');
   } catch (e) {
+    aboutBox.innerHTML = '';
     if (currentLang === 'ru') {
       descBox.innerHTML = `<p>Атмосферная композиция «${track.title}». История создания и концепция релиза появятся здесь в ближайшее время.</p>`;
     } else {
