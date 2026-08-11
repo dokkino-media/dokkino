@@ -100,7 +100,7 @@
   .detail-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
   .detail-genre { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(197, 155, 39, 0.15); color: var(--gold-accent); padding: 4px 10px; border-radius: 6px; width: fit-content; }
 
-  /* Блок "О песне" (короткий, между обложкой и платформами) */
+  /* Блок "О песне" */
   .about-section { margin-bottom: 36px; }
 
   /* Стриминговые платформы */
@@ -171,20 +171,18 @@
     <div class="track-list" id="tracksContainer"></div>
   </div>
 
-
   <div id="detailView" class="view">
     <div class="cw-back" onclick="closeTrack()" data-ru="← Назад к музыке" data-en="← Back to music">← Назад к музыке</div>
     
     <div class="detail-header">
       <img id="detailCover" src="" alt="Cover" class="detail-cover">
       <div class="detail-meta-box">
-        <div class="detail-genre" id="detailGenre">Ambient / Electronic</div>
+        <div class="detail-genre" id="detailGenre">Cool Jazz / Smooth Jazz</div>
         <h1 class="detail-title" id="detailTitle"></h1>
         <div class="detail-sub" id="detailSub">dokkino • Single</div>
       </div>
     </div>
 
-    <!-- НОВЫЙ БЛОК: короткое "О песне", между обложкой и кнопками платформ -->
     <div class="about-section">
       <div class="cw-section-label" data-ru="О песне" data-en="About the Song">О песне</div>
       <div class="cw-intro" id="detailAbout"></div>
@@ -212,20 +210,7 @@
 <script>
 const tracksData = [
   { "id": 1, "title": "We Are Eternity", "type": "Single", "year": 2026, "genre": "Cinematic Ballad", "cover": "covers/1.jpg", "links": { "apple": "https://music.apple.com/us/album/we-are-eternity-single/1874284686", "spotify": "https://open.spotify.com/track/05P1ue3l7QTgEz2aWaPBPq?si=374f5ca950dc4e45", "amazon": "https://music.amazon.com/albums/B0GHQMQJCQ?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_9ehaiO90hEUOium0uOID7CcNe", "boomplay": "https://www.boomplay.com/songs/EQuwqMcsQFbhi0FngWkopp8d" } },
-  { "id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": {
-  "id": 2,
-  "title": "Eden He",
-  "type": "Single",
-  "year": 2025,
-  "genre": "Cool Jazz / Smooth Jazz",
-  "cover": "covers/2.jpg",
-  "links": {
-    "apple": "https://music.apple.com/us/album/eden-he-single/1861207738",
-    "spotify": "https://open.spotify.com/track/2OOnVb1bbwxnAwlZi63Qvg?si=77049d03641e46b5",
-    "amazon": "https://music.amazon.com/albums/B0G5J6W12H?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HfwlOifNYJ1JUocpTf1Rw7Hko",
-    "boomplay": "https://www.boomplay.com/songs/EQumMEbNsYLPNFoxaslFkic1"
-  }
-}, "cover": "covers/2.jpg", "links": { "apple": "https://music.apple.com/us/album/eden-he-single/1861207738", "spotify": "https://open.spotify.com/track/2OOnVb1bbwxnAwlZi63Qvg?si=77049d03641e46b5", "amazon": "https://music.amazon.com/albums/B0G5J6W12H?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HfwlOifNYJ1JUocpTf1Rw7Hko", "boomplay": "https://www.boomplay.com/songs/EQumMEbNsYLPNFoxaslFkic1" } },
+  { "id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": "Cool Jazz / Smooth Jazz", "cover": "covers/2.jpg", "links": { "apple": "https://music.apple.com/us/album/eden-he-single/1861207738", "spotify": "https://open.spotify.com/track/2OOnVb1bbwxnAwlZi63Qvg?si=77049d03641e46b5", "amazon": "https://music.amazon.com/albums/B0G5J6W12H?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HfwlOifNYJ1JUocpTf1Rw7Hko", "boomplay": "https://www.boomplay.com/songs/EQumMEbNsYLPNFoxaslFkic1" } },
   { "id": 3, "title": "Eden She and He", "type": "Single", "year": 2025, "genre": "Ambient", "cover": "covers/3.jpg", "links": { "apple": "https://music.apple.com/us/album/eden-she-and-he-single/1860899842", "spotify": "https://open.spotify.com/track/7JeP1XZMqgYJqQuEbYZS7w?si=63e68958f5764e57", "amazon": "https://music.amazon.com/albums/B0G59VWVY9?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_odb10XGvOlNOdHvgS4KeqtPzE", "boomplay": "https://www.boomplay.com/songs/EQust3YCyClwIfbg7LDaGm4y" } },
   { "id": 4, "title": "Created by Him", "type": "Single", "year": 2025, "genre": "Cinematic", "cover": "covers/4.jpg", "links": { "apple": "https://music.apple.com/us/album/created-by-him-single/1864607864", "spotify": "https://open.spotify.com/track/0adCet9vodJmhiIEET9Sc5?si=66b1d0b7301c40d6", "amazon": "https://music.amazon.com/albums/B0G873LLKR?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_i0IaEkCnXmU3ejB0PJ6xZLqXt", "boomplay": "https://www.boomplay.com/songs/EQur06hM_pyDRelVOt63uTGn" } },
   { "id": 5, "title": "Falling Into You", "type": "Single", "year": 2025, "genre": "Deep House", "cover": "covers/5.jpg", "links": { "apple": "https://music.apple.com/us/album/falling-into-you-single/1861960141", "spotify": "https://open.spotify.com/track/3DVaW6CEQ6uedldtFDJsfB?si=90d1747b15d943f1", "amazon": "https://music.amazon.com/albums/B0G5ZP9JZR?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_WBhY4Z6yk1LQXPNJ1dIlq0jeC", "boomplay": "https://www.boomplay.com/songs/EQvnpKw60uKy2vTbuYS-XY9W" } },
