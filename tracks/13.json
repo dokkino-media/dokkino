@@ -3,12 +3,10 @@
     "ru": "<p>«Эдем. Он» — атмосферная джазовая композиция о любви, которая прожила целую жизнь и не утратила нежности. Это его взгляд на мгновение, в котором они оказались, прожив жизнь. Всю жизнь Он и Она искали свой Рай. А потом оказалось, что до него нужно было просто дожить — вместе.</p>",
     "en": "<p>“Eden. He” is an atmospheric jazz composition about a love that has lived through an entire lifetime without losing its tenderness. It is his view of the moment they have finally reached after all those years. He and She spent their lives searching for their Eden — only to discover that perhaps they simply had to live long enough to arrive there together.</p>"
   },
-
   "genreSub": [
     "Atmospheric Jazz",
     "Jazz Ballad"
   ],
-
   "mood": [
     "Warm",
     "Intimate",
@@ -16,7 +14,6 @@
     "Reflective",
     "Mature"
   ],
-
   "themes": [
     "Love",
     "Shared Life",
@@ -24,15 +21,16 @@
     "Trust",
     "Eden"
   ],
-
   "shortDescription": {
     "ru": "Атмосферная джазовая композиция о любви, которая спустя годы обнаруживает свой Рай в самых простых вещах.",
     "en": "An atmospheric jazz composition about a love that, after a lifetime together, discovers its Eden in the simplest things."
   },
-
   "description": {
     "ru": "<p>«Эдем. Он» — атмосферная джазовая композиция о любви, которая успела прожить целую жизнь и не утратить нежности. Песня почти ничего не рассказывает напрямую — она строится на образах и метафорах, из которых постепенно возникает история двух людей.</p><p>Когда-то они искали свой Рай. Строили дом, сажали деревья, растили детей, ошибались, спешили, чего-то добивались. Рай всё время казался чем-то, что ещё впереди. Но годы прошли — и однажды оказалось, что дом уже построен и их дети строят свои дома; посаженный ими сад вырос, виноград созрел, а рядом любимая женщина. Она — «обнажённая, мягкая — нежная». Эта обнажённость символизирует близость, доверие и ту редкую открытость, которая возможна между людьми, прожившими вместе долгую жизнь. И особенно важно, что годы не сделали её жёстче — рядом с ним она сохранила свою мягкость и нежность.</p><p>Последние дни лета — не увядание, а урожай. Не конец жизни, а её зрелость, когда становится видно, что из всего посаженного принесло плоды. Даже сад в начале песни — старый, а в конце уже дивный. Не потому, что изменился сад. Изменился взгляд человека, который наконец остановился и увидел его.</p><p>По-новому он смотрит на ночное небо. Оно проплакало дождём — дождём, который питает землю, омывает и очищает. Серая пелена уходит, и за тучей проступает месяц. Туча остаётся, но она больше не закрывает собой всё небо. И двое просто смотрят: на месяц, на ночь, на свой сад. После долгой жизни, наполненной движением и заботами, они наконец могут остановиться и увидеть, насколько прекрасен этот простой миг.</p><p>Над ними уже прошёл звездопад — яркое время успехов, достижений, славы и соблазнов. Когда-то всё это сверкало и казалось огромным. Теперь звездопад остался позади, а они остались друг у друга.</p><p>И потому самым большим в песне неожиданно становится самое простое: запах земли и яблок после дождя, спелая кисть винограда под крышей, любимая женщина рядом и свежий чай.</p><p>Возможно, в этом и заключается главный образ «Эдема»: Рай не обязательно приходит как чудо. Иногда он медленно вырастает вокруг человека — из любви, прожитых лет, посаженных деревьев, дождей, созревших плодов и сохранённого доверия. И однажды нужно просто остановиться, чтобы его увидеть.</p>",
-
     "en": "<p>“Eden. He” is an atmospheric jazz composition about a love that has lived through an entire lifetime without losing its tenderness. The song tells almost nothing directly. Instead, it is built from images and metaphors that gradually reveal the story of two people.</p><p>Once, they were searching for their Eden. They built a home, planted trees, raised children, made mistakes, hurried through life and tried to achieve things. Paradise always seemed to be somewhere ahead of them. But the years passed, and one day they discovered that the house had already been built, their children were now building homes of their own, the garden they had planted had grown, the grapes had ripened — and the woman he loved was still beside him. She is “naked, soft — tender.” Her nakedness is not about the body alone, but about intimacy, trust and the rare openness that can exist between two people who have shared a lifetime. Just as importantly, the years have not made her hard. Beside him, she has kept her softness and tenderness.</p><p>The final days of summer are not presented as decay, but as harvest. Not the end of life, but its maturity — the time when it finally becomes possible to see what has grown from everything that was planted. Even the garden changes within the song: at first it is old, but by the end it has become wondrous. Not because the garden itself has changed, but because the man looking at it has finally stopped long enough to see it.</p><p>He also looks at the night sky differently. It has cried itself out in rain — rain that nourishes the earth, washes it and makes it clean. The grey veil begins to lift, and the moon appears from behind a cloud. The cloud is still there, but it no longer covers the entire sky. And the two of them simply look: at the moon, at the night, at their garden. After a long life filled with movement and responsibility, they are finally able to stop and recognize how beautiful this ordinary moment is.</p><p>Their meteor shower has already passed — the brilliant years of success, achievement, recognition and temptation. Once, all of it glittered and seemed enormous. Now the spectacle is behind them, while they remain beside one another.</p><p>And so the greatest things in the song unexpectedly become the simplest ones: the smell of earth and apples after rain, a ripe cluster of grapes beneath the roof, the woman he loves beside him, and fresh tea.</p><p>Perhaps this is the central image of “Eden”: paradise does not necessarily arrive as a miracle. Sometimes it grows slowly around us — from love, shared years, planted trees, rain, ripened fruit and trust that has survived. And one day, all that remains is to stop long enough to see it.</p>"
+  },
+  "lyrics": {
+    "ru": "Ты обнажённая, мягкая - нежная<br>Смотришь на наш старый сад<br>Под крышею кисть виноградная - спелая<br>Над нами прошёл звездопад<br><br>Пахнет листвою и яблоком<br>Я заварил свежий чай<br>Помнишь то, чего не было<br>Как мы искали свой Рай?<br><br>Дождём небо проплакало<br>За тучею месяц повис<br>Ночью любовью насытившись<br>Ветер оставил свой свист<br><br>Пахнет землёю и яблоком<br>Я заварил свежий чай<br>Помнишь то, чего не было<br>Как мы искали свой Рай?<br><br>Ты обнажённая, мягкая - нежная<br>Смотришь на наш дивный сад<br>Под крышею кисть виноградная - спелая<br>Над нами прошёл звездопад<br><br>Под крышею кисть виноградная - спелая<br>Над нами прошёл звездопад",
+    "en": "Ты обнажённая, мягкая - нежная<br>Смотришь на наш старый сад<br>Под крышею кисть виноградная - спелая<br>Над нами прошёл звездопад<br><br>Пахнет листвою и яблоком<br>Я заварил свежий чай<br>Помнишь то, чего не было<br>Как мы искали свой Рай?<br><br>Дождём небо проплакало<br>За тучею месяц повис<br>Ночью любовью насытившись<br>Ветер оставил свой свист<br><br>Пахнет землёю и яблоком<br>Я заварил свежий чай<br>Помнишь то, чего не было<br>Как мы искали свой Рай?<br><br>Ты обнажённая, мягкая - нежная<br>Смотришь на наш дивный сад<br>Под крышею кисть виноградная - спелая<br>Над нами прошёл звездопад<br><br>Под крышею кисть виноградная - спелая<br>Над нами прошёл звездопад"
   }
 }
