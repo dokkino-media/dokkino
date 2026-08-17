@@ -1,14 +1,15 @@
 {
-  "genreSub": ["Chamber Jazz", "Vocal Jazz", "Light Swing", "Nocturne Jazz"],
-  "mood": ["Intimate", "Sensual", "Nocturnal", "Tender", "Nostalgic"],
-  "themes": ["Love", "Eden", "Presence", "Autumn", "Vulnerability"],
+  "about": {
+    "en": "<p><strong>Eden She and He</strong> is an intimate, late-night jazz ballad built around warm piano progressions, delicate brushed percussion, and a soulful tenor saxophone solo. Intertwining male and female vocals create a tender, unguarded conversation beneath the night sky.</p>",
+    "ru": "<p><strong>Eden She and He</strong> — чувственная ночная джазовая баллада, сотканная из тёплых фортепианных аккордов, мягкого шёпота щёток по барабанам и проникновенного соло саксофона. Мужской и женский голоса ведут неспешный интимный диалог, превращая обычный вечер в тихий священный сад — земной Эдем, где счастье измеряется ароматом спелых яблок, свежим чаем и взаимным доверием.</p>"
+  },
   "shortDescription": {
-    "ru": "«Eden She and He» — это чувственная ночная джазовая баллада, сотканная из тёплых фортепианных аккордов, мягкого шёпота щёток по барабанам и проникновенного соло саксофона. Мужской и женский голоса ведут неспешный интимный диалог, превращая обычный вечер в тихий священный сад — земной Эдем, где счастье измеряется ароматом спелых яблок, свежим чаем и взаимным доверием.",
-    "en": "\"Eden She and He\" is an intimate, late-night jazz ballad built around warm piano progressions, delicate brushed percussion, and a soulful tenor saxophone solo. Intertwining male and female vocals create a tender, unguarded conversation beneath the night sky."
+    "en": "An intimate late-night jazz ballad featuring piano, saxophone solo, and a warm vocal duet exploring a personal paradise.",
+    "ru": "Чувственная ночная джазовая баллада с фортепиано, соло на саксофоне и тёплым вокальным диалогом о простом земном рае."
   },
   "description": {
-    "ru": "<p>Песня размышляет о том, как двое ищут потерянный рай в туманных снах, а находят его в простой заботе и взгляде, полном любви. Но в этой пасторали нет иллюзии вечности: виноградная лоза уже налилась тяжестью, напоминая, что вскоре опадёт листва, а значит — каждое мгновение близости бесценно.</p>",
-    "en": "<p>The piece finds Paradise not in distant myth, but in quiet shared presence — fresh tea, the scent of apples, and the heavy ripening grapevines before autumn arrives. It is a timeless meditation on vulnerable devotion and cherishing the fleeting warmth of the present.</p>"
+    "en": "<p>The piece finds Paradise not in distant myth, but in quiet shared presence — fresh tea, the scent of apples, and the heavy ripening grapevines before autumn arrives. It is a timeless meditation on vulnerable devotion and cherishing the fleeting warmth of the present.</p>",
+    "ru": "<p>Песня размышляет о том, как двое ищут потерянный рай в туманных снах, а находят его в простой заботе и взгляде, полном любви. Но в этой пасторали нет иллюзии вечности: виноградная лоза уже налилась тяжестью, напоминая, что вскоре опадёт листва, а значит — каждое мгновение близости бесценно.</p>"
   },
   "lyrics": {
     "ru": "<p>I'm bare, soft, and tender,<br>Gazing at the garden with love in my eyes.<br>A grapevine drapes gently above us,<br>While stars drift quietly across the night.</p><p>The earth… filled with the scent of apples,<br>You brew fresh tea close by my side.<br>Do you recall the dreams we never knew,<br>How we searched together for our Paradise?</p><p>Rain has whispered across the sky,<br>The moon hangs low behind the drifting clouds.<br>Night, brimming with quiet devotion,<br>Leaves only the wind’s gentle sigh.</p><p>The earth… filled with the scent of apples,<br>You brew fresh tea close by my side.<br>Do you recall the dreams we never knew,<br>How we searched together for our Paradise?</p><p>I'm bare, soft, and tender,<br>Gazing at the garden with love in my eyes.<br>The grapevine hangs heavy, ripe and full —<br>Soon the leaves will fall.</p><p>Do you recall the dreams we never knew,<br>How we searched together for our Paradise?</p>",
