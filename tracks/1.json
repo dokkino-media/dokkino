@@ -1,4 +1,3 @@
-
 {
   "about": {
     "en": "<p><strong>We Are Eternity</strong> is a cinematic ballad about a long-awaited meeting — one the narrator had pleaded with Fate itself to bring into his life.</p><p>Fate appears in the song as a woman: the mysterious <em>“She”</em> who once predicted paths that never came to pass. Worn by pain, even Fate could be wrong. Yet the two people finally find each other and begin walking a road that has never been mapped for them.</p><p>At the heart of the song are the words <em>“No clocks. No time.”</em> Eternity here does not mean an endless number of years. It is the experience of a moment in which the past and future lose their power, leaving only two people, together, in a present that feels without beginning or end.</p>",
@@ -7,6 +6,10 @@
   "shortDescription": {
     "en": "A cinematic ballad about two people whose meeting seems to exist beyond the boundaries of fate and time.",
     "ru": "Кинематографическая баллада о встрече двух людей, которая словно происходит за пределами власти судьбы и времени."
+  },
+  "credits": {
+    "ru": "<p><strong>Автор оригинального текста:</strong> Сергей Мачуляк, 2020</p><p><strong>Английская адаптация:</strong> Сергей Мачуляк</p><p><strong>Музыка:</strong> Сергей Мачуляк</p><p><strong>Релиз:</strong> 20 января 2026</p><p>© Сергей Мачуляк. Все права защищены.</p>",
+    "en": "<p><strong>Original lyrics:</strong> Sergei Machuliak, 2020</p><p><strong>English adaptation:</strong> Sergei Machuliak</p><p><strong>Music:</strong> Sergei Machuliak</p><p><strong>Released:</strong> January 20, 2026</p><p>© Sergei Machuliak. All rights reserved.</p>"
   },
   "description": {
     "en": "<p>“We Are Eternity” moves from longing and uncertainty toward a moment in which two people find themselves beyond the predictions of Fate and the ordinary measure of time.</p>",
