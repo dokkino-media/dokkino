@@ -76,15 +76,20 @@
   /* Детальная страница трека */
   .detail-header {
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    gap: 20px;
     margin-bottom: 36px;
     background: var(--card-bg);
     padding: 28px;
     border-radius: 20px;
     border: 1px solid var(--card-border);
   }
+  .detail-header-top {
+    display: flex;
+    gap: 32px;
+  }
   @media (max-width: 600px) {
-    .detail-header { flex-direction: column; align-items: center; text-align: center; }
+    .detail-header-top { flex-direction: column; align-items: center; text-align: center; }
   }
   .detail-cover {
     width: 200px;
@@ -97,10 +102,12 @@
   }
   .detail-meta-box { display: flex; flex-direction: column; justify-content: center; }
   .detail-title { font-size: 28px; font-weight: 700; margin: 0 0 8px 0; }
-  .detail-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+  .detail-sub { font-size: 15px; color: var(--text-secondary); }
   .detail-genre { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(197, 155, 39, 0.15); color: var(--gold-accent); padding: 4px 10px; border-radius: 6px; width: fit-content; }
-  .detail-credits { margin-top: 16px; font-size: 12px; line-height: 1.55; color: var(--text-secondary); }
-  .detail-credits p { margin: 2px 0; }
+  .detail-credits { padding-top: 16px; border-top: 1px solid var(--card-border); font-size: 12px; line-height: 1.7; color: var(--text-secondary); }
+  .detail-credits p { margin: 0 0 4px 0; }
+  .detail-credits p:last-child { margin-bottom: 0; }
+  .detail-credits:empty { display: none; }
 
   /* Блок "О песне" (короткий, между обложкой и платформами) */
   .about-section { margin-bottom: 36px; }
@@ -178,13 +185,15 @@
     <div class="cw-back" onclick="closeTrack()" data-ru="← Назад к музыке" data-en="← Back to music">← Назад к музыке</div>
     
     <div class="detail-header">
-      <img id="detailCover" src="" alt="Cover" class="detail-cover">
-      <div class="detail-meta-box">
-        <div class="detail-genre" id="detailGenre">Ambient / Electronic</div>
-        <h1 class="detail-title" id="detailTitle"></h1>
-        <div class="detail-sub" id="detailSub">dokkino • Single</div>
-        <div class="detail-credits" id="detailCredits"></div>
+      <div class="detail-header-top">
+        <img id="detailCover" src="" alt="Cover" class="detail-cover">
+        <div class="detail-meta-box">
+          <div class="detail-genre" id="detailGenre">Ambient / Electronic</div>
+          <h1 class="detail-title" id="detailTitle"></h1>
+          <div class="detail-sub" id="detailSub">dokkino • Single</div>
+        </div>
       </div>
+      <div class="detail-credits" id="detailCredits"></div>
     </div>
 
     <!-- НОВЫЙ БЛОК: короткое "О песне", между обложкой и кнопками платформ -->
