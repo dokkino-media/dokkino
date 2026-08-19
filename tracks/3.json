@@ -4,8 +4,12 @@
     "en": "<p><strong>Eden She and He</strong> is an intimate, late-night jazz ballad built around warm piano progressions, delicate brushed percussion, and a soulful tenor saxophone solo. Intertwining male and female vocals create a tender, unguarded conversation beneath the night sky.</p>"
   },
   "shortDescription": {
-    "ru": "<p><strong>Eden She and He</strong> — чувственная ночная джазовая баллада, сотканная из тёплых фортепианных аккордов, мягкого шёпота щёток по барабанам и проникновенного соло саксофона. Мужской и женский голоса ведут неспешный интимный диалог, превращая обычный вечер в тихий священный сад — земной Эдем, где счастье измеряется ароматом спелых яблок, свежим чаем и взаимным доверием.</p>",
-    "en": "<p><strong>Eden She and He</strong> is an intimate, late-night jazz ballad built around warm piano progressions, delicate brushed percussion, and a soulful tenor saxophone solo. Intertwining male and female vocals create a tender, unguarded conversation beneath the night sky.</p>"
+    "ru": "Чувственная ночная джазовая баллада с фортепиано, соло на саксофоне и тёплым вокальным диалогом о простом земном рае.",
+    "en": "An intimate late-night jazz ballad featuring piano, saxophone solo, and a warm vocal duet exploring a personal paradise."
+  },
+  "credits": {
+    "ru": "<p><strong>Автор текста:</strong> <span style=\"white-space:nowrap;\">Сергей Мачуляк, 2020</span></p><p><strong>Английская адаптация:</strong> <span style=\"white-space:nowrap;\">Сергей Мачуляк</span></p><p><strong>Музыка:</strong> <span style=\"white-space:nowrap;\">Сергей Мачуляк</span></p><p><strong>Релиз:</strong> <span style=\"white-space:nowrap;\">5 декабря 2025</span></p><p style=\"margin-top:6px; opacity:0.8;\"><span style=\"white-space:nowrap;\">© Сергей Мачуляк.</span> <span style=\"white-space:nowrap;\">Все права защищены.</span></p>",
+    "en": "<p><strong>Lyrics:</strong> <span style=\"white-space:nowrap;\">Sergei Machuliak, 2020</span></p><p><strong>English adaptation:</strong> <span style=\"white-space:nowrap;\">Sergei Machuliak</span></p><p><strong>Music:</strong> <span style=\"white-space:nowrap;\">Sergei Machuliak</span></p><p><strong>Released:</strong> <span style=\"white-space:nowrap;\">December 5, 2025</span></p><p style=\"margin-top:6px; opacity:0.8;\"><span style=\"white-space:nowrap;\">© Sergei Machuliak.</span> <span style=\"white-space:nowrap;\">All rights reserved.</span></p>"
   },
   "description": {
     "ru": "<p>Песня размышляет о том, как двое ищут потерянный рай в туманных снах, а находят его в простой заботе и взгляде, полном любви. Но в этой пасторали нет иллюзии вечности: виноградная лоза уже налилась тяжестью, напоминая, что вскоре опадёт листва, а значит — каждое мгновение близости бесценно.</p>",
