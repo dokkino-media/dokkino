@@ -1,44 +1,22 @@
 {
   "about": {
-    "ru": "<p>«Eden. He» — атмосферная джазовая композиция о любви, близости и мгновении, в котором привычная суета жизни словно отступает. Рай постепенно открывается в самых простых вещах — в любимом человеке, знакомом саду, тишине, дожде и ощущении, что больше никуда не нужно спешить.</p>",
-    "en": "<p>“Eden. He” is an atmospheric jazz composition about love, intimacy, and a moment in which the rush of life seems to fall away. Paradise gradually reveals itself in the simplest things — in someone you love, a familiar garden, silence, rain, and the feeling that there is nowhere else you need to be.</p>"
+    "ru": "<p><strong>Eden He</strong> — атмосферная Deep House / Ambient композиция, раскрывающая мужской взгляд на обретение земного Рая. Тёплые синтезаторные текстуры, созерцательный ритмический пульс и глубокий вокал переносят в пространство тихого сада, где за повседневными моментами открывается вечность.</p>",
+    "en": "<p><strong>Eden He</strong> is an atmospheric Deep House / Ambient composition offering a man’s perspective on finding an earthly Paradise. Warm synth textures, a contemplative pulse, and deep vocals evoke a quiet garden where eternity reveals itself behind simple everyday moments.</p>"
   },
-
-  "genreSub": [
-    "Atmospheric Jazz",
-    "Jazz Ballad"
-  ],
-
-  "mood": [
-    "Intimate",
-    "Tender",
-    "Warm",
-    "Reflective",
-    "Peaceful"
-  ],
-
-  "themes": [
-    "Love",
-    "Intimacy",
-    "Trust",
-    "Paradise",
-    "Stillness"
-  ],
-
   "shortDescription": {
-    "ru": "Атмосферная джазовая композиция о любви, близости и Рае, который открывается в самых простых мгновениях жизни.",
-    "en": "An atmospheric jazz composition about love, intimacy, and a Paradise revealed in the simplest moments of life."
+    "ru": "Атмосферная Deep House / Ambient композиция о мужском взгляде на любовь, зрелость и обретение земного Эдема.",
+    "en": "An atmospheric Deep House / Ambient track exploring a man’s perspective on love, maturity, and finding an earthly Eden."
   },
-
+  "credits": {
+    "ru": "<p><strong>Автор текста:</strong> <span style=\"white-space:nowrap;\">Сергей Мачуляк, 2020</span></p><p><strong>Английская адаптация:</strong> <span style=\"white-space:nowrap;\">Сергей Мачуляк</span></p><p><strong>Музыка:</strong> <span style=\"white-space:nowrap;\">Сергей Мачуляк</span></p><p><strong>Релиз:</strong> <span style=\"white-space:nowrap;\">7 декабря 2025</span></p><p style=\"margin-top:6px; opacity:0.8;\"><span style=\"white-space:nowrap;\">© Сергей Мачуляк.</span> <span style=\"white-space:nowrap;\">Все права защищены.</span></p>",
+    "en": "<p><strong>Lyrics:</strong> <span style=\"white-space:nowrap;\">Sergei Machuliak, 2020</span></p><p><strong>English adaptation:</strong> <span style=\"white-space:nowrap;\">Sergei Machuliak</span></p><p><strong>Music:</strong> <span style=\"white-space:nowrap;\">Sergei Machuliak</span></p><p><strong>Released:</strong> <span style=\"white-space:nowrap;\">December 7, 2025</span></p><p style=\"margin-top:6px; opacity:0.8;\"><span style=\"white-space:nowrap;\">© Sergei Machuliak.</span> <span style=\"white-space:nowrap;\">All rights reserved.</span></p>"
+  },
   "description": {
-    "ru": "<p>«Eden. He» — атмосферная джазовая композиция о любви, близости и мгновении, в котором привычная суета жизни словно отступает. Песня раскрывается через образы и метафоры, а не через прямой рассказ: ночной сад, запах земли и яблок, свежий чай, дождь, плывущие облака, лунный свет, виноградная лоза над головой и тихий звездопад.</p><p>Рай здесь — не далёкое место. Он постепенно открывается в самых простых вещах: в присутствии любимого человека, в знакомом саду вокруг, в запахе земли после дождя и в том редком мгновении, когда больше никуда не нужно спешить.</p><p>Женщина рядом с мужчиной — «мягкая и нежная, открытая перед ним». Её открытость становится образом близости, доверия и той тихой уязвимости, которая возможна между двумя людьми, когда им больше не нужна дистанция друг от друга. Их близость выражена не признаниями в любви, а самим присутствием: он заваривает свежий чай, пока она рядом, и вместе они просто смотрят и слушают окружающий их мир.</p><p>Дождь приносит ночи ощущение обновления и ясности. Небеса вздрагивают, облака начинают плыть, и за ними появляется луна. Мир кажется омытым и словно заново увиденным — земля, яблоки, ветви, ветер и небо становятся частью одного общего мгновения близости.</p><p>На протяжении всей песни тишина становится почти самостоятельным присутствием. Звездопад тих, любовь тиха, от ветра остаётся лишь мягкий гул, ветви шепчут над головой. В финальном образе женщина едва слышно дышит в темноте, и кажется, будто весь мир остановился, чтобы дышать вместе с ней.</p><p>«Eden. He» — песня о Рае, который не обязательно искать где-то за пределами жизни. Иногда он уже здесь — в любви, доверии, тишине и простом мгновении, когда двое наконец перестают искать и замечают мир вокруг себя.</p>",
-
-    "en": "<p>“Eden. He” is an atmospheric jazz composition about love, intimacy, and a moment in which the rush of life seems to fall away. The song unfolds through images and metaphors rather than a direct narrative: a garden at night, the scent of earth and apples, fresh tea, rain, drifting clouds, moonlight, a grapevine overhead, and a quiet starfall.</p><p>Paradise here is not a distant place. It is something that gradually reveals itself in the simplest things — in the presence of someone you love, in the familiar garden around you, in the smell of the earth after rain, and in the rare moment when there is nowhere else you need to be.</p><p>The woman beside the man is “soft and gentle, lying open.” Her openness symbolizes intimacy, trust, and the quiet vulnerability possible between two people who no longer need distance between them. Their closeness is not expressed through declarations of love, but through presence: he brews fresh tea while she is near, and together they simply watch and listen to the world around them.</p><p>Rain gives the night a sense of renewal and clarity. The heavens tremble, clouds begin to drift, and the moon appears behind them. The world seems freshly washed and newly visible — earth, apples, branches, wind and sky becoming part of the same intimate moment.</p><p>Throughout the song, silence becomes almost a presence of its own. The starfall is quiet, devotion is quiet, the wind leaves only a gentle hum, branches whisper overhead. In the final image, the woman breathes softly in the darkness, and it seems as though the entire world has stopped to breathe with her.</p><p>“Eden. He” is a song about a Paradise that does not need to be found somewhere beyond life. Sometimes it is already here — in love, trust, silence, and the simple moment when two people stop searching long enough to notice the world around them.</p>"
+    "ru": "<p>«Eden He» рассказывает историю мужчины, который сквозь годы поисков, тревог и созидания приходит к главному осознанию: истинный Рай не нужно искать за горизонтом — он вырастает вокруг нас из любви, заботы и общего пути.</p><p>Запах яблок, свежезаваренный чай, капли дождя и зрелая виноградная лоза под крышей становятся символами зрелого чувства, перешедшего от юношеской бури к тихому, нерушимому покою.</p>",
+    "en": "<p>“Eden He” traces a man’s journey through years of searching and building toward a profound realization: true Paradise is not found beyond distant horizons — it grows around us through devotion, care, and a shared path.</p><p>The scent of apples, freshly brewed tea, gentle rain, and heavy grapevines become metaphors for a mature love that has transitioned from youthful storms into an enduring, quiet sanctuary.</p>"
   },
-
   "lyrics": {
-    "ru": "<p>You… soft and gentle, lying open,<br>Watching the garden with love in your eyes.<br>A grapevine shelters softly above us,<br>As a quiet starfall drifts through the night.</p><p>Earth… the scent of apples in the air,<br>I brew fresh tea while you are near.<br>Do you recall the dreams we never knew?<br>How we search together for our Paradise?</p><p>Rain makes the heavens quietly tremble,<br>And the moon hangs low behind drifting clouds.<br>Night, overflowing with quiet devotion,<br>Leaves only the wind’s gentle hum.</p><p>Earth… the scent of apples in the air,<br>I brew fresh tea while you are near.<br>Do you recall the dreams we never knew?<br>How we search together for our Paradise?</p><p>Softly… the branches murmur above us,<br>Tracing their whispers along the night’s veil.<br>You breathe so quietly, warm in the darkness,<br>As if the world holds its breath with you.</p>",
-
-    "en": "<p>You… soft and gentle, lying open,<br>Watching the garden with love in your eyes.<br>A grapevine shelters softly above us,<br>As a quiet starfall drifts through the night.</p><p>Earth… the scent of apples in the air,<br>I brew fresh tea while you are near.<br>Do you recall the dreams we never knew?<br>How we search together for our Paradise?</p><p>Rain makes the heavens quietly tremble,<br>And the moon hangs low behind drifting clouds.<br>Night, overflowing with quiet devotion,<br>Leaves only the wind’s gentle hum.</p><p>Earth… the scent of apples in the air,<br>I brew fresh tea while you are near.<br>Do you recall the dreams we never knew?<br>How we search together for our Paradise?</p><p>Softly… the branches murmur above us,<br>Tracing their whispers along the night’s veil.<br>You breathe so quietly, warm in the darkness,<br>As if the world holds its breath with you.</p>"
+    "ru": "<p>I look upon the quiet garden,<br>The morning mist begins to fade.<br>A heavy grapevine hangs above us,<br>In this peaceful shelter we have made.</p><p>The earth is breathing autumn coolness,<br>I pour fresh tea into your hands.<br>Do you remember how we wandered,<br>Searching for Eden through distant lands?</p><p>The shooting stars have passed above us,<br>The restless winds have gone to sleep.<br>In your soft eyes, untouched and tender,<br>Lives every promise that we keep.</p><p>The earth is breathing autumn coolness,<br>I pour fresh tea into your hands.<br>Do you remember how we wandered,<br>Searching for Eden through distant lands?</p><p>The grapevine hangs now ripe and heavy,<br>Soon golden leaves will gently fall.<br>We never lost our sacred garden —<br>It was right here through it all.</p>",
+    "en": "<p>I look upon the quiet garden,<br>The morning mist begins to fade.<br>A heavy grapevine hangs above us,<br>In this peaceful shelter we have made.</p><p>The earth is breathing autumn coolness,<br>I pour fresh tea into your hands.<br>Do you remember how we wandered,<br>Searching for Eden through distant lands?</p><p>The shooting stars have passed above us,<br>The restless winds have gone to sleep.<br>In your soft eyes, untouched and tender,<br>Lives every promise that we keep.</p><p>The earth is breathing autumn coolness,<br>I pour fresh tea into your hands.<br>Do you remember how we wandered,<br>Searching for Eden through distant lands?</p><p>The grapevine hangs now ripe and heavy,<br>Soon golden leaves will gently fall.<br>We never lost our sacred garden —<br>It was right here through it all.</p>"
   }
 }
