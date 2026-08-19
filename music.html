@@ -73,27 +73,16 @@
   .track-meta { font-size: 13px; color: var(--text-secondary); }
   .track-action { font-size: 13px; font-weight: 600; color: var(--gold-accent); display: flex; align-items: center; gap: 6px; }
 
-  /* Детальная страница трека */
+  /* Детальная страница трека: 3 колонки на десктопе */
   .detail-header {
     display: flex;
     gap: 28px;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 36px;
     background: var(--card-bg);
     padding: 28px;
     border-radius: 20px;
     border: 1px solid var(--card-border);
-  }
-  @media (max-width: 760px) {
-    .detail-header { flex-direction: column; align-items: center; text-align: center; }
-    .detail-credits {
-      width: 100%;
-      padding-left: 0;
-      padding-top: 16px;
-      border-left: none;
-      border-top: 1px solid var(--card-border);
-      align-self: stretch;
-    }
   }
   .detail-cover {
     width: 200px;
@@ -104,25 +93,91 @@
     background-color: var(--card-border);
     flex-shrink: 0;
   }
-  .detail-meta-box { display: flex; flex-direction: column; justify-content: center; flex: 1; min-width: 0; }
-  .detail-title { font-size: 28px; font-weight: 700; margin: 0 0 8px 0; }
-  .detail-sub { font-size: 15px; color: var(--text-secondary); }
-  .detail-genre { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: rgba(197, 155, 39, 0.15); color: var(--gold-accent); padding: 4px 10px; border-radius: 6px; width: fit-content; margin-bottom: 12px; }
-  .detail-credits {
-    width: 230px;
-    flex-shrink: 0;
-    align-self: center;
-    padding-left: 24px;
-    border-left: 1px solid var(--card-border);
+  .detail-meta-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+  }
+  .detail-genre {
+    display: inline-block;
     font-size: 12px;
-    line-height: 1.7;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(197, 155, 39, 0.15);
+    color: var(--gold-accent);
+    padding: 5px 12px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 16px;
+  }
+  .detail-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.25;
+  }
+  .detail-sub {
+    font-size: 15px;
     color: var(--text-secondary);
   }
-  .detail-credits p { margin: 0 0 4px 0; }
-  .detail-credits p:last-child { margin-bottom: 0; }
-  .detail-credits:empty { display: none; }
+  .detail-credits {
+    width: 250px;
+    flex-shrink: 0;
+    padding-left: 24px;
+    border-left: 1px solid var(--card-border);
+    font-size: 11.5px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+  .detail-credits p {
+    margin: 0 0 5px 0;
+  }
+  .detail-credits p:last-child {
+    margin-bottom: 0;
+  }
+  .detail-credits:empty {
+    display: none;
+  }
 
-  /* Блок "О песне" (короткий, между обложкой и платформами) */
+  /* Адаптив для мобильных (до 760px) */
+  @media (max-width: 760px) {
+    .detail-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 18px;
+      gap: 20px;
+    }
+    .detail-meta-box {
+      align-items: center;
+      width: 100%;
+    }
+    .detail-genre {
+      margin: 0 auto 16px auto;
+    }
+    .detail-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .detail-sub {
+      margin-bottom: 4px;
+    }
+    .detail-credits {
+      width: 100%;
+      padding-left: 0;
+      padding-top: 18px;
+      border-left: none;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+  }
+
+  /* Блок "О песне" */
   .about-section { margin-bottom: 36px; }
 
   /* Стриминговые платформы */
@@ -155,7 +210,7 @@
     transform: translateY(-1px);
   }
 
-  /* Описание трека / текст песни */
+  /* Текстовые блоки */
   .cw-intro { 
     font-size: 15px; 
     line-height: 1.8; 
@@ -165,8 +220,8 @@
     padding: 28px; 
     border-radius: 16px; 
     border: 1px solid var(--card-border); 
-    position: relative;
-    overflow: hidden;
+    position: relative; 
+    overflow: hidden; 
   }
   .cw-intro p { margin: 0 0 16px 0; }
   .cw-intro p:last-child { margin-bottom: 0; }
@@ -193,7 +248,6 @@
     <div class="track-list" id="tracksContainer"></div>
   </div>
 
-
   <div id="detailView" class="view">
     <div class="cw-back" onclick="closeTrack()" data-ru="← Назад к музыке" data-en="← Back to music">← Назад к музыке</div>
     
@@ -207,7 +261,7 @@
       <div class="detail-credits" id="detailCredits"></div>
     </div>
 
-    <!-- НОВЫЙ БЛОК: короткое "О песне", между обложкой и кнопками платформ -->
+    <!-- Блок "О песне" -->
     <div class="about-section">
       <div class="cw-section-label" data-ru="О песне" data-en="About the Song">О песне</div>
       <div class="cw-intro" id="detailAbout"></div>
