@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -13,6 +14,7 @@
     --text-secondary: #5C5852;
     --gold-accent: #C59B27;
   }
+
   body {
     background-color: var(--bg-main);
     color: var(--text-primary);
@@ -21,6 +23,7 @@
     padding: 40px 20px 60px;
     box-sizing: border-box;
   }
+
   .lang-switch {
     text-align: right;
     max-width: 1100px;
@@ -28,6 +31,7 @@
     font-size: 14px;
     font-weight: 600;
   }
+
   .lang-btn {
     background: none;
     border: none;
@@ -37,15 +41,36 @@
     font-size: 14px;
     font-weight: 600;
   }
+
   .lang-btn.active {
     color: var(--gold-accent);
     text-decoration: underline;
   }
-  .dokkino-container { max-width: 1100px; margin: 0 auto; text-align: center; }
-  .brand-logo { font-size: 48px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
-  .gold-k { color: var(--gold-accent); }
-  .brand-tagline { font-size: 16px; color: var(--text-secondary); margin-bottom: 50px; }
-  .hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 80px; }
+
+  .dokkino-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .brand-logo {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 50px;
+  }
+
+  .gold-k {
+    color: var(--gold-accent);
+  }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
   .hub-card {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -58,73 +83,171 @@
     justify-content: space-between;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
-  .hub-card:hover { transform: translateY(-4px); border-color: var(--gold-accent); }
-  .card-title { font-family: inherit; font-size: 22px; font-weight: 600; margin: 0 0 12px 0; color: var(--text-primary); }
-  .card-description { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin: 0 0 30px 0; }
-  .card-link-action { font-size: 14px; font-weight: 600; color: var(--gold-accent); }
-  .footer-wrapper { border-top: 1px solid var(--card-border); padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-  .footer-links { display: flex; gap: 20px; }
-  .footer-links a { color: var(--text-secondary); font-size: 13px; text-decoration: none; }
-  .footer-links a:hover { color: var(--text-primary); }
-  .copyright { font-size: 12px; color: #9E988F; }
-  @media (max-width: 850px) { .hub-grid { grid-template-columns: 1fr; } }
+
+  .hub-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-accent);
+  }
+
+  .card-title {
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: var(--text-primary);
+  }
+
+  .card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0 0 30px 0;
+  }
+
+  .card-link-action {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold-accent);
+  }
+
+  .footer-wrapper {
+    border-top: 1px solid var(--card-border);
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #9E988F;
+  }
+
+  @media (max-width: 850px) {
+    .hub-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
+
 <body>
 
 <div class="lang-switch">
-  <button class="lang-btn active" onclick="setLanguage('ru')">RU</button> | 
+  <button class="lang-btn active" onclick="setLanguage('ru')">RU</button> |
   <button class="lang-btn" onclick="setLanguage('en')">EN</button>
 </div>
 
 <div class="dokkino-container">
+
   <header>
     <div class="brand-logo">dok<span class="gold-k">k</span>ino</div>
-    <div class="brand-tagline" data-ru="Медиахолдинг и творческая вселенная" data-en="Media holding and creative universe">Медиахолдинг и творческая вселенная</div>
   </header>
 
   <main class="hub-grid">
+
     <a href="music.html" class="hub-card">
       <div>
         <h2 class="card-title">dokkino music</h2>
-        <p class="card-description" data-ru="Атмосферная музыка с элементами ИИ: Ambient, Cinematic, Deep House." data-en="Atmospheric music with AI elements: Ambient, Cinematic, Deep House.">Атмосферная музыка с элементами ИИ: Ambient, Cinematic, Deep House.</p>
+        <p
+          class="card-description"
+          data-ru="Авторская атмосферная музыка: Cinematic, Ambient, Jazz, Folk, Electronic."
+          data-en="Original atmospheric music: Cinematic, Ambient, Jazz, Folk, Electronic.">
+          Авторская атмосферная музыка: Cinematic, Ambient, Jazz, Folk, Electronic.
+        </p>
       </div>
-      <div class="card-link-action" data-ru="Слушать &rarr;" data-en="Listen &rarr;">Слушать &rarr;</div>
+
+      <div
+        class="card-link-action"
+        data-ru="Слушать &rarr;"
+        data-en="Listen &rarr;">
+        Слушать &rarr;
+      </div>
     </a>
 
     <a href="books.html" class="hub-card">
       <div>
         <h2 class="card-title">dokkino book</h2>
-        <p class="card-description" data-ru="Серия детских книг «Джорж Флоринг и его необыкновенные приключения», автор Крис Вэй." data-en="Children's fantasy book series 'George Floring and His Extraordinary Adventures' by Chris Way.">Серия детских книг «Джорж Флоринг и его необыкновенные приключения», автор Крис Вэй.</p>
+        <p
+          class="card-description"
+          data-ru="Серия детских книг «Джорж Флоринг и его необыкновенные приключения», автор Крис Вэй."
+          data-en="Children's fantasy book series 'George Floring and His Extraordinary Adventures' by Chris Way.">
+          Серия детских книг «Джорж Флоринг и его необыкновенные приключения», автор Крис Вэй.
+        </p>
       </div>
-      <div class="card-link-action" data-ru="Смотреть серию &rarr;" data-en="Explore series &rarr;">Смотреть серию &rarr;</div>
+
+      <div
+        class="card-link-action"
+        data-ru="Смотреть серию &rarr;"
+        data-en="Explore series &rarr;">
+        Смотреть серию &rarr;
+      </div>
     </a>
 
     <a href="https://youtube.com/@dokkino" target="_blank" rel="noopener" class="hub-card">
       <div>
         <h2 class="card-title">dokkino film</h2>
-        <p class="card-description" data-ru="Кинопроекты, короткометражные фильмы, оригинальные психологические истории." data-en="Film projects, short films, and original psychological stories.">Кинопроекты, короткометражные фильмы, оригинальные психологические истории.</p>
+        <p
+          class="card-description"
+          data-ru="Кинопроекты, короткометражные фильмы, оригинальные психологические истории."
+          data-en="Film projects, short films, and original psychological stories.">
+          Кинопроекты, короткометражные фильмы, оригинальные психологические истории.
+        </p>
       </div>
-      <div class="card-link-action" data-ru="Смотреть на YouTube &rarr;" data-en="Watch on YouTube &rarr;">Смотреть на YouTube &rarr;</div>
+
+      <div
+        class="card-link-action"
+        data-ru="Смотреть на YouTube &rarr;"
+        data-en="Watch on YouTube &rarr;">
+        Смотреть на YouTube &rarr;
+      </div>
     </a>
+
   </main>
 
   <footer class="footer-wrapper">
+
     <div class="footer-links">
       <a href="terms.html" data-ru="Условия использования" data-en="Terms of Use">Условия использования</a>
       <a href="privacy.html" data-ru="Политика конфиденциальности" data-en="Privacy Policy">Политика конфиденциальности</a>
       <a href="disclaimer.html" data-ru="Отказ от ответственности" data-en="Disclaimer">Отказ от ответственности</a>
     </div>
-    <div class="copyright" data-ru="&copy;  2026 Sergey Machulyak. Все права защищены." data-en="&copy; 2026 Sergey Machulyak.">&copy; 2026 Sergey Machulyak. Все права защищены.</div>
+
+    <div
+      class="copyright"
+      data-ru="&copy; 2026 Sergey Machulyak. Все права защищены."
+      data-en="&copy; 2026 Sergey Machulyak. All rights reserved.">
+      &copy; 2026 Sergey Machulyak. Все права защищены.
+    </div>
+
   </footer>
+
 </div>
 
 <script>
 function setLanguage(lang) {
   localStorage.setItem('dokkino_lang', lang);
+
   document.querySelectorAll('[data-ru]').forEach(el => {
     el.innerHTML = el.getAttribute('data-' + lang);
   });
+
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
   });
@@ -135,5 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(savedLang);
 });
 </script>
+
 </body>
 </html>
+```
