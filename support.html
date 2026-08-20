@@ -3,11 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Поддержать dokkino</title>
-<meta name="description" content="Поддержка творческих проектов dokkino.">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A1918'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='44' font-family='Arial,sans-serif' font-weight='700' fill='%23C59B27'%3Ek%3C/text%3E%3C/svg%3E">
+<title>Support dokkino</title>
 
 <style>
   :root {
@@ -19,9 +15,7 @@
     --gold-accent: #C59B27;
   }
 
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
   body {
     background-color: var(--bg-main);
@@ -67,9 +61,7 @@
     font-size: 13px;
   }
 
-  .back:hover {
-    color: var(--gold-accent);
-  }
+  .back:hover { color: var(--gold-accent); }
 
   .brand {
     text-align: center;
@@ -79,9 +71,7 @@
     margin-bottom: 42px;
   }
 
-  .gold-k {
-    color: var(--gold-accent);
-  }
+  .gold-k { color: var(--gold-accent); }
 
   h1 {
     font-size: 32px;
@@ -94,7 +84,7 @@
     margin: 28px 0 10px;
   }
 
-  p {
+  p, li {
     font-size: 15px;
     line-height: 1.75;
     color: var(--text-secondary);
@@ -107,24 +97,13 @@
     padding: 28px;
   }
 
-  .notice {
-    margin-top: 28px;
-    padding: 20px;
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    background: var(--bg-main);
-  }
-
-  .notice p {
-    margin: 0;
-  }
-
-  .lang-block {
-    display: none;
-  }
-
-  .lang-block.active {
-    display: block;
+  .support-note {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--gold-accent);
+    background: rgba(197, 155, 39, 0.08);
+    color: var(--text-secondary);
+    line-height: 1.7;
   }
 
   footer {
@@ -150,9 +129,10 @@
     font-size: 13px;
   }
 
-  .footer-links a:hover {
-    color: var(--text-primary);
-  }
+  .footer-links a:hover { color: var(--text-primary); }
+
+  .lang-block { display: none; }
+  .lang-block.active { display: block; }
 </style>
 </head>
 
@@ -168,113 +148,59 @@
   <a
     href="index.html"
     class="back"
-    data-ru="&larr; На главную"
-    data-en="&larr; Back to home">
-    &larr; На главную
+    data-ru="← На главную"
+    data-en="← Back to home">
+    ← На главную
   </a>
 
-  <div class="brand">
-    dok<span class="gold-k">k</span>ino
-  </div>
+  <div class="brand">dok<span class="gold-k">k</span>ino</div>
 
   <div class="lang-block active" data-lang="ru">
-
     <div class="content-card">
 
       <h1>Поддержать dokkino</h1>
 
       <p>
-        dokkino — пространство авторских проектов в музыке,
-        литературе и кино.
+        dokkino — независимый творческий проект, объединяющий музыку,
+        книги и кино.
       </p>
 
       <p>
-        Работа над этими проектами включает создание музыки,
-        развитие сайта, работу над книгами, фильмами и новыми
-        творческими идеями.
+        Возможность добровольно поддержать создание и развитие новых
+        проектов dokkino появится на этой странице позже.
       </p>
 
-      <h2>Поддержка проекта</h2>
-
-      <p>
-        В будущем здесь появится возможность добровольно поддержать
-        развитие dokkino.
-      </p>
-
-      <p>
-        Такая поддержка поможет продолжать работу над новыми
-        произведениями, развивать существующие проекты и делать
-        их доступными более широкой аудитории.
-      </p>
-
-      <h2>Важно</h2>
-
-      <p>
-        Поддержка dokkino будет добровольной и не будет являться
-        покупкой доли в проекте, инвестицией или приобретением
-        каких-либо прав на произведения.
-      </p>
-
-      <div class="notice">
-        <p>
-          Возможность финансовой поддержки пока не подключена.
-          Информация о доступных способах поддержки появится
-          на этой странице позже.
-        </p>
+      <div class="support-note">
+        Сейчас платежи на dokkino.com не принимаются. Эта страница
+        не является предложением инвестировать, приобрести долю
+        в проекте или получить финансовую прибыль.
       </div>
 
     </div>
-
   </div>
 
   <div class="lang-block" data-lang="en">
-
     <div class="content-card">
 
       <h1>Support dokkino</h1>
 
       <p>
-        dokkino is a space for original projects in music,
-        literature and film.
+        dokkino is an independent creative project bringing together
+        music, books and film.
       </p>
 
       <p>
-        Work on these projects includes creating music,
-        developing the website, working on books and films,
-        and developing new creative ideas.
+        An option to voluntarily support the creation and development
+        of new dokkino projects will be added to this page later.
       </p>
 
-      <h2>Supporting the project</h2>
-
-      <p>
-        In the future, this page will provide an opportunity
-        to voluntarily support the development of dokkino.
-      </p>
-
-      <p>
-        Such support will help continue the creation of new works,
-        develop existing projects and make them available to a
-        wider audience.
-      </p>
-
-      <h2>Important</h2>
-
-      <p>
-        Support for dokkino will be voluntary and will not constitute
-        the purchase of an ownership interest, an investment, or the
-        acquisition of any rights in the works.
-      </p>
-
-      <div class="notice">
-        <p>
-          Financial support is not currently available.
-          Information about available support options will be
-          published on this page later.
-        </p>
+      <div class="support-note">
+        dokkino.com does not currently accept payments. This page is
+        not an offer to invest, acquire an ownership interest in the
+        project or receive a financial return.
       </div>
 
     </div>
-
   </div>
 
   <footer>
@@ -305,9 +231,9 @@
     </div>
 
     <div
-      data-ru="&copy; 2026 Sergey Machulyak. Все права защищены."
-      data-en="&copy; 2026 Sergey Machulyak. All rights reserved.">
-      &copy; 2026 Sergey Machulyak. Все права защищены.
+      data-ru="&copy; 2026 Sergei Machuliak. Все права защищены."
+      data-en="&copy; 2026 Sergei Machuliak. All rights reserved.">
+      &copy; 2026 Sergei Machuliak. Все права защищены.
     </div>
 
   </footer>
