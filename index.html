@@ -1,10 +1,24 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dokkino</title>
+
+<title>dokkino — music, books, film</title>
+
+<meta name="description" content="dokkino — original music, books and film: atmospheric music releases, the George Floring series, and independent film projects.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dokkino.com/">
+<meta property="og:title" content="dokkino — music, books, film">
+<meta property="og:description" content="dokkino — original music, books and film: atmospheric music releases, the George Floring series, and independent film projects.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dokkino — music, books, film">
+<meta name="twitter:description" content="dokkino — original music, books and film: atmospheric music releases, the George Floring series, and independent film projects.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A1918'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='44' font-family='Arial,sans-serif' font-weight='700' fill='%23C59B27'%3Ek%3C/text%3E%3C/svg%3E">
+
 <style>
   :root {
     --bg-main: #FDFBF7;
@@ -15,13 +29,14 @@
     --gold-accent: #C59B27;
   }
 
+  * { box-sizing: border-box; }
+
   body {
     background-color: var(--bg-main);
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 40px 20px 60px;
-    box-sizing: border-box;
   }
 
   .lang-switch {
@@ -90,7 +105,6 @@
   }
 
   .card-title {
-    font-family: inherit;
     font-size: 22px;
     font-weight: 600;
     margin: 0 0 12px 0;
@@ -122,6 +136,8 @@
   .footer-links {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .footer-links a {
@@ -165,6 +181,7 @@
     <a href="music.html" class="hub-card">
       <div>
         <h2 class="card-title">dokkino music</h2>
+
         <p
           class="card-description"
           data-ru="Авторская атмосферная музыка: Cinematic, Ambient, Jazz, Folk, Electronic."
@@ -184,6 +201,7 @@
     <a href="books.html" class="hub-card">
       <div>
         <h2 class="card-title">dokkino book</h2>
+
         <p
           class="card-description"
           data-ru="Серия детских книг «Джорж Флоринг и его необыкновенные приключения», автор Крис Вэй."
@@ -200,9 +218,15 @@
       </div>
     </a>
 
-    <a href="https://youtube.com/@dokkino" target="_blank" rel="noopener" class="hub-card">
+    <a
+      href="https://youtube.com/@dokkino"
+      target="_blank"
+      rel="noopener"
+      class="hub-card">
+
       <div>
         <h2 class="card-title">dokkino film</h2>
+
         <p
           class="card-description"
           data-ru="Кинопроекты, короткометражные фильмы, оригинальные психологические истории."
@@ -224,9 +248,28 @@
   <footer class="footer-wrapper">
 
     <div class="footer-links">
-      <a href="terms.html" data-ru="Условия использования" data-en="Terms of Use">Условия использования</a>
-      <a href="privacy.html" data-ru="Политика конфиденциальности" data-en="Privacy Policy">Политика конфиденциальности</a>
-      <a href="disclaimer.html" data-ru="Отказ от ответственности" data-en="Disclaimer">Отказ от ответственности</a>
+
+      <a
+        href="terms.html"
+        data-ru="Условия использования"
+        data-en="Terms of Use">
+        Условия использования
+      </a>
+
+      <a
+        href="privacy.html"
+        data-ru="Политика конфиденциальности"
+        data-en="Privacy Policy">
+        Политика конфиденциальности
+      </a>
+
+      <a
+        href="support.html"
+        data-ru="Поддержать dokkino"
+        data-en="Support dokkino">
+        Поддержать dokkino
+      </a>
+
     </div>
 
     <div
@@ -249,8 +292,13 @@ function setLanguage(lang) {
   });
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+    btn.classList.toggle(
+      'active',
+      btn.innerText.toLowerCase() === lang
+    );
   });
+
+  document.documentElement.lang = lang;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -261,4 +309,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-```
