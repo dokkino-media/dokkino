@@ -43,6 +43,7 @@
 
   /* Список треков */
   .track-list { display: flex; flex-direction: column; gap: 12px; }
+
   .track-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -54,12 +55,15 @@
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   }
+
   .track-card:hover {
     transform: translateY(-2px);
     border-color: var(--gold-accent);
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   }
+
   .track-info-left { display: flex; align-items: center; gap: 16px; }
+
   .track-cover-sm {
     width: 56px;
     height: 56px;
@@ -68,6 +72,7 @@
     background-color: var(--card-border);
     flex-shrink: 0;
   }
+
   .track-titles { display: flex; flex-direction: column; gap: 4px; }
   .track-name { font-size: 17px; font-weight: 600; color: var(--text-primary); }
   .track-meta { font-size: 13px; color: var(--text-secondary); }
@@ -84,6 +89,7 @@
     border-radius: 20px;
     border: 1px solid var(--card-border);
   }
+
   .detail-cover {
     width: 200px;
     height: 200px;
@@ -93,6 +99,7 @@
     background-color: var(--card-border);
     flex-shrink: 0;
   }
+
   .detail-meta-box {
     display: flex;
     flex-direction: column;
@@ -100,6 +107,7 @@
     flex: 1;
     min-width: 0;
   }
+
   .detail-genre {
     display: inline-block;
     font-size: 12px;
@@ -113,16 +121,19 @@
     width: fit-content;
     margin-bottom: 16px;
   }
+
   .detail-title {
     font-size: 28px;
     font-weight: 700;
     margin: 0 0 10px 0;
     line-height: 1.25;
   }
+
   .detail-sub {
     font-size: 15px;
     color: var(--text-secondary);
   }
+
   .detail-credits {
     width: 250px;
     flex-shrink: 0;
@@ -132,12 +143,15 @@
     line-height: 1.65;
     color: var(--text-secondary);
   }
+
   .detail-credits p {
     margin: 0 0 5px 0;
   }
+
   .detail-credits p:last-child {
     margin-bottom: 0;
   }
+
   .detail-credits:empty {
     display: none;
   }
@@ -151,20 +165,25 @@
       padding: 24px 18px;
       gap: 20px;
     }
+
     .detail-meta-box {
       align-items: center;
       width: 100%;
     }
+
     .detail-genre {
       margin: 0 auto 16px auto;
     }
+
     .detail-title {
       font-size: 24px;
       margin-bottom: 8px;
     }
+
     .detail-sub {
       margin-bottom: 4px;
     }
+
     .detail-credits {
       width: 100%;
       padding-left: 0;
@@ -182,13 +201,23 @@
 
   /* Стриминговые платформы */
   .platforms-section { margin-bottom: 36px; }
-  .cw-section-label { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
+
+  .cw-section-label {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 10px;
+  }
   
   .platforms-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 12px;
   }
+
   .platform-btn {
     display: flex;
     align-items: center;
@@ -204,6 +233,7 @@
     font-weight: 600;
     transition: all 0.2s;
   }
+
   .platform-btn:hover {
     border-color: var(--gold-accent);
     color: var(--gold-accent);
@@ -223,12 +253,39 @@
     position: relative; 
     overflow: hidden; 
   }
+
   .cw-intro p { margin: 0 0 16px 0; }
   .cw-intro p:last-child { margin-bottom: 0; }
 
-  footer { border-top: 1px solid var(--card-border); margin-top: 60px; padding-top: 24px; text-align: center; font-size: 12px; color: #9E988F; }
+  footer {
+    border-top: 1px solid var(--card-border);
+    margin-top: 60px;
+    padding-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #9E988F;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
 </style>
 </head>
+
 <body>
 
 <div class="lang-switch">
@@ -240,53 +297,155 @@
 
   <div id="listView" class="view active">
     <a href="index.html" class="cw-back">← dokkino</a>
-    <div class="cw-pen-name">dokkino music</div>
-    <h1 class="cw-title" data-ru="Музыка" data-en="Music">Музыка</h1>
-    <div class="cw-subtitle" data-ru="Дискография и истории создания треков" data-en="Discography and background stories">Дискография и истории создания треков</div>
 
-    <div class="cw-section-label" data-ru="Релизы" data-en="Releases">Релизы</div>
+    <div class="cw-pen-name">dokkino music</div>
+
+    <h1 class="cw-title"
+        data-ru="Музыка"
+        data-en="Music">
+      Музыка
+    </h1>
+
+    <div class="cw-subtitle"
+         data-ru="Дискография и истории создания треков"
+         data-en="Discography and background stories">
+      Дискография и истории создания треков
+    </div>
+
+    <div class="cw-section-label"
+         data-ru="Релизы"
+         data-en="Releases">
+      Релизы
+    </div>
+
     <div class="track-list" id="tracksContainer"></div>
   </div>
 
   <div id="detailView" class="view">
-    <div class="cw-back" onclick="closeTrack()" data-ru="← Назад к музыке" data-en="← Back to music">← Назад к музыке</div>
+
+    <div class="cw-back"
+         onclick="closeTrack()"
+         data-ru="← Назад к музыке"
+         data-en="← Back to music">
+      ← Назад к музыке
+    </div>
     
     <div class="detail-header">
-      <img id="detailCover" src="" alt="Cover" class="detail-cover">
+
+      <img id="detailCover"
+           src=""
+           alt="Cover"
+           class="detail-cover">
+
       <div class="detail-meta-box">
-        <div class="detail-genre" id="detailGenre">Ambient / Electronic</div>
-        <h1 class="detail-title" id="detailTitle"></h1>
-        <div class="detail-sub" id="detailSub">dokkino • Single</div>
+        <div class="detail-genre"
+             id="detailGenre">
+          Ambient / Electronic
+        </div>
+
+        <h1 class="detail-title"
+            id="detailTitle">
+        </h1>
+
+        <div class="detail-sub"
+             id="detailSub">
+          dokkino • Single
+        </div>
       </div>
-      <div class="detail-credits" id="detailCredits"></div>
+
+      <div class="detail-credits"
+           id="detailCredits">
+      </div>
+
     </div>
 
     <!-- Блок "О песне" -->
     <div class="about-section">
-      <div class="cw-section-label" data-ru="О песне" data-en="About the Song">О песне</div>
-      <div class="cw-intro" id="detailAbout"></div>
+
+      <div class="cw-section-label"
+           data-ru="О песне"
+           data-en="About the Song">
+        О песне
+      </div>
+
+      <div class="cw-intro"
+           id="detailAbout">
+      </div>
+
     </div>
 
     <div class="platforms-section">
-      <div class="cw-section-label" data-ru="Слушать на платформах" data-en="Listen on platforms">Слушать на платформах</div>
-      <div class="platforms-grid" id="platformsGrid"></div>
+
+      <div class="cw-section-label"
+           data-ru="Слушать на платформах"
+           data-en="Listen on platforms">
+        Слушать на платформах
+      </div>
+
+      <div class="platforms-grid"
+           id="platformsGrid">
+      </div>
+
     </div>
 
-    <div class="cw-section-label" data-ru="О чём эта песня" data-en="About this song">О чём эта песня</div>
-    <div class="cw-intro" id="detailDescription"></div>
+    <div class="cw-section-label"
+         data-ru="О чём эта песня"
+         data-en="About this song">
+      О чём эта песня
+    </div>
 
-    <div class="cw-section-label" data-ru="Текст песни" data-en="Lyrics">Текст песни</div>
-    <div class="cw-intro" id="detailLyrics"></div>
+    <div class="cw-intro"
+         id="detailDescription">
+    </div>
+
+    <div class="cw-section-label"
+         data-ru="Текст песни"
+         data-en="Lyrics">
+      Текст песни
+    </div>
+
+    <div class="cw-intro"
+         id="detailLyrics">
+    </div>
 
   </div>
 
   <footer>
-    <div data-ru=" 2026 Sergey Machulyak. Все права защищены." data-en=" 2026 Sergey Machulyak. "> 2026 Sergey Machulyak. Все права защищены.</div>
+
+    <div class="footer-links">
+
+      <a href="terms.html"
+         data-ru="Условия использования"
+         data-en="Terms of Use">
+        Условия использования
+      </a>
+
+      <a href="privacy.html"
+         data-ru="Политика конфиденциальности"
+         data-en="Privacy Policy">
+        Политика конфиденциальности
+      </a>
+
+      <a href="support.html"
+         data-ru="Поддержать dokkino"
+         data-en="Support dokkino">
+        Поддержать dokkino
+      </a>
+
+    </div>
+
+    <div
+      data-ru="&copy; 2026 Sergei Machuliak. Все права защищены."
+      data-en="&copy; 2026 Sergei Machuliak. All rights reserved.">
+      &copy; 2026 Sergei Machuliak. Все права защищены.
+    </div>
+
   </footer>
 
 </div>
 
 <script>
+
 const tracksData = [
   { "id": 1, "title": "We Are Eternity", "type": "Single", "year": 2026, "genre": "Ambient / Cinematic", "cover": "covers/1.jpg", "links": { "apple": "https://music.apple.com/us/album/we-are-eternity-single/1874284686", "spotify": "https://open.spotify.com/track/05P1ue3l7QTgEz2aWaPBPq?si=374f5ca950dc4e45", "amazon": "https://music.amazon.com/albums/B0GHQMQJCQ?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_9ehaiO90hEUOium0uOID7CcNe", "boomplay": "https://www.boomplay.com/songs/EQuwqMcsQFbhi0FngWkopp8d" } },
   { "id": 2, "title": "Eden He", "type": "Single", "year": 2025, "genre": "Jazz", "cover": "covers/2.jpg", "links": { "apple": "https://music.apple.com/us/album/eden-he-single/1861207738", "spotify": "https://open.spotify.com/track/2OOnVb1bbwxnAwlZi63Qvg?si=77049d03641e46b5", "amazon": "https://music.amazon.com/albums/B0G5J6W12H?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_HfwlOifNYJ1JUocpTf1Rw7Hko", "boomplay": "https://www.boomplay.com/songs/EQumMEbNsYLPNFoxaslFkic1" } },
@@ -325,11 +484,17 @@ function renderTracks() {
     card.onclick = () => openTrack(track.id);
 
     const actionText = currentLang === 'ru' ? 'Подробнее →' : 'Details →';
-    const coverSrc = track.cover ? encodeURI(track.cover) : `https://via.placeholder.com/150/F5F0EB/C59B27?text=${encodeURIComponent(track.title.charAt(0))}`;
+    const coverSrc = track.cover
+      ? encodeURI(track.cover)
+      : `https://via.placeholder.com/150/F5F0EB/C59B27?text=${encodeURIComponent(track.title.charAt(0))}`;
 
     card.innerHTML = `
       <div class="track-info-left">
-        <img src="${coverSrc}" alt="${track.title}" class="track-cover-sm" onerror="this.src='https://via.placeholder.com/150/F5F0EB/C59B27?text=Art'">
+        <img
+          src="${coverSrc}"
+          alt="${track.title}"
+          class="track-cover-sm"
+          onerror="this.src='https://via.placeholder.com/150/F5F0EB/C59B27?text=Art'">
         <div class="track-titles">
           <div class="track-name">${track.title}</div>
           <div class="track-meta">${track.type} • ${track.year}</div>
@@ -337,21 +502,26 @@ function renderTracks() {
       </div>
       <div class="track-action">${actionText}</div>
     `;
+
     container.appendChild(card);
   });
 }
 
 async function openTrack(trackId) {
   activeTrackId = trackId;
+
   const track = tracksData.find(t => t.id === trackId);
   if (!track) return;
 
-  const coverSrc = track.cover ? encodeURI(track.cover) : `https://via.placeholder.com/300/F5F0EB/C59B27?text=${encodeURIComponent(track.title)}`;
+  const coverSrc = track.cover
+    ? encodeURI(track.cover)
+    : `https://via.placeholder.com/300/F5F0EB/C59B27?text=${encodeURIComponent(track.title)}`;
 
   document.getElementById('detailCover').src = coverSrc;
   document.getElementById('detailTitle').innerText = track.title;
   document.getElementById('detailGenre').innerText = track.genre;
-  document.getElementById('detailSub').innerText = `dokkino • ${track.type} • ${track.year}`;
+  document.getElementById('detailSub').innerText =
+    `dokkino • ${track.type} • ${track.year}`;
 
   const grid = document.getElementById('platformsGrid');
   grid.innerHTML = '';
@@ -364,6 +534,7 @@ async function openTrack(trackId) {
   };
 
   let hasLinks = false;
+
   if (track.links) {
     for (let [plat, url] of Object.entries(track.links)) {
       if (url && url.trim() !== '') {
@@ -378,22 +549,32 @@ async function openTrack(trackId) {
         a.target = '_blank';
         a.className = 'platform-btn';
         a.innerText = platformNames[plat] || plat;
+
         grid.appendChild(a);
       }
     }
   }
 
   if (!hasLinks) {
-    grid.innerHTML = `<div style="grid-column: 1/-1; color: var(--text-secondary); font-size: 14px;">${currentLang === 'ru' ? 'Ссылки на стриминги скоро появятся.' : 'Streaming links coming soon.'}</div>`;
+    grid.innerHTML =
+      `<div style="grid-column: 1/-1; color: var(--text-secondary); font-size: 14px;">${
+        currentLang === 'ru'
+          ? 'Ссылки на стриминги скоро появятся.'
+          : 'Streaming links coming soon.'
+      }</div>`;
   }
 
   await updateTrackDescription(track);
 
   document.getElementById('listView').classList.remove('active');
+
   setTimeout(() => {
     document.getElementById('listView').style.display = 'none';
     document.getElementById('detailView').style.display = 'block';
-    setTimeout(() => document.getElementById('detailView').classList.add('active'), 20);
+
+    setTimeout(() => {
+      document.getElementById('detailView').classList.add('active');
+    }, 20);
   }, 200);
 }
 
@@ -402,64 +583,110 @@ async function updateTrackDescription(track) {
   const descBox = document.getElementById('detailDescription');
   const lyricsBox = document.getElementById('detailLyrics');
   const creditsBox = document.getElementById('detailCredits');
-  const loadingText = currentLang === 'ru' ? 'Загрузка...' : 'Loading...';
 
-  aboutBox.innerHTML = `<p style="color: var(--text-secondary); margin:0;">${loadingText}</p>`;
-  descBox.innerHTML = `<p style="color: var(--text-secondary);">${loadingText}</p>`;
+  const loadingText =
+    currentLang === 'ru'
+      ? 'Загрузка...'
+      : 'Loading...';
+
+  aboutBox.innerHTML =
+    `<p style="color: var(--text-secondary); margin:0;">${loadingText}</p>`;
+
+  descBox.innerHTML =
+    `<p style="color: var(--text-secondary);">${loadingText}</p>`;
+
   lyricsBox.innerHTML = '';
   creditsBox.innerHTML = '';
 
   try {
     const response = await fetch(`tracks/${track.id}.json`);
+
     if (response.ok) {
       const externalData = await response.json();
+
       let foundAny = false;
 
       if (externalData.credits) {
-        creditsBox.innerHTML = externalData.credits[currentLang] || externalData.credits['ru'] || '';
+        creditsBox.innerHTML =
+          externalData.credits[currentLang] ||
+          externalData.credits['ru'] ||
+          '';
       }
 
       if (externalData.about) {
-        aboutBox.innerHTML = externalData.about[currentLang] || externalData.about['ru'] || '';
+        aboutBox.innerHTML =
+          externalData.about[currentLang] ||
+          externalData.about['ru'] ||
+          '';
+
         foundAny = true;
+
       } else if (externalData.shortDescription) {
-        aboutBox.innerHTML = typeof externalData.shortDescription === 'object' 
-          ? (externalData.shortDescription[currentLang] || externalData.shortDescription['ru'] || '')
-          : externalData.shortDescription;
+
+        aboutBox.innerHTML =
+          typeof externalData.shortDescription === 'object'
+            ? (
+                externalData.shortDescription[currentLang] ||
+                externalData.shortDescription['ru'] ||
+                ''
+              )
+            : externalData.shortDescription;
+
         foundAny = true;
+
       } else {
         aboutBox.innerHTML = '';
       }
 
       if (externalData.description) {
-        descBox.innerHTML = externalData.description[currentLang] || externalData.description['ru'] || '';
+        descBox.innerHTML =
+          externalData.description[currentLang] ||
+          externalData.description['ru'] ||
+          '';
+
         foundAny = true;
       }
+
       if (externalData.lyrics) {
-        lyricsBox.innerHTML = externalData.lyrics[currentLang] || externalData.lyrics['ru'] || '';
+        lyricsBox.innerHTML =
+          externalData.lyrics[currentLang] ||
+          externalData.lyrics['ru'] ||
+          '';
+
         foundAny = true;
       }
+
       if (foundAny) return;
     }
+
     throw new Error('JSON not found');
+
   } catch (e) {
     aboutBox.innerHTML = '';
     creditsBox.innerHTML = '';
+
     if (currentLang === 'ru') {
-      descBox.innerHTML = `<p>Атмосферная композиция «${track.title}». История создания и концепция релиза появятся здесь в ближайшее время.</p>`;
+      descBox.innerHTML =
+        `<p>Атмосферная композиция «${track.title}». История создания и концепция релиза появятся здесь в ближайшее время.</p>`;
     } else {
-      descBox.innerHTML = `<p>Atmospheric composition "${track.title}". Background story and release concept will be available here soon.</p>`;
+      descBox.innerHTML =
+        `<p>Atmospheric composition "${track.title}". Background story and release concept will be available here soon.</p>`;
     }
   }
 }
 
 function closeTrack() {
   activeTrackId = null;
+
   document.getElementById('detailView').classList.remove('active');
+
   setTimeout(() => {
     document.getElementById('detailView').style.display = 'none';
     document.getElementById('listView').style.display = 'block';
-    setTimeout(() => document.getElementById('listView').classList.add('active'), 20);
+
+    setTimeout(() => {
+      document.getElementById('listView').classList.add('active');
+    }, 20);
   }, 200);
 }
 
@@ -469,25 +696,41 @@ function setLanguage(lang) {
   
   document.querySelectorAll('[data-ru]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
-    if (text) el.innerHTML = text;
+
+    if (text) {
+      el.innerHTML = text;
+    }
   });
   
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
+    btn.classList.toggle(
+      'active',
+      btn.innerText.toLowerCase() === lang
+    );
   });
+
+  /* Синхронизируем язык документа с выбранным RU / EN */
+  document.documentElement.lang = lang;
 
   renderTracks();
 
   if (activeTrackId) {
     const track = tracksData.find(t => t.id === activeTrackId);
-    if (track) updateTrackDescription(track);
+
+    if (track) {
+      updateTrackDescription(track);
+    }
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('dokkino_lang') || 'ru';
+  const savedLang =
+    localStorage.getItem('dokkino_lang') || 'ru';
+
   setLanguage(savedLang);
 });
+
 </script>
+
 </body>
 </html>
