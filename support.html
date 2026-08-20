@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Поддержать dokkino</title>
+<meta name="description" content="Поддержка творческих проектов dokkino.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A1918'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='44' font-family='Arial,sans-serif' font-weight='700' fill='%23C59B27'%3Ek%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root {
+    --bg-main: #FDFBF7;
+    --card-bg: #F5F0EB;
+    --card-border: #E6DFD5;
+    --text-primary: #1A1918;
+    --text-secondary: #5C5852;
+    --gold-accent: #C59B27;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 40px 20px 60px;
+  }
+
+  .lang-switch {
+    text-align: right;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .lang-btn.active {
+    color: var(--gold-accent);
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .back:hover {
+    color: var(--gold-accent);
+  }
+
+  .brand {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 42px;
+  }
+
+  .gold-k {
+    color: var(--gold-accent);
+  }
+
+  h1 {
+    font-size: 32px;
+    margin: 0 0 24px;
+    line-height: 1.25;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 28px 0 10px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .content-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .notice {
+    margin-top: 28px;
+    padding: 20px;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    background: var(--bg-main);
+  }
+
+  .notice p {
+    margin: 0;
+  }
+
+  .lang-block {
+    display: none;
+  }
+
+  .lang-block.active {
+    display: block;
+  }
+
+  footer {
+    border-top: 1px solid var(--card-border);
+    margin-top: 60px;
+    padding-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #9E988F;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLanguage('ru')">RU</button> |
+  <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+</div>
+
+<div class="container">
+
+  <a
+    href="index.html"
+    class="back"
+    data-ru="&larr; На главную"
+    data-en="&larr; Back to home">
+    &larr; На главную
+  </a>
+
+  <div class="brand">
+    dok<span class="gold-k">k</span>ino
+  </div>
+
+  <div class="lang-block active" data-lang="ru">
+
+    <div class="content-card">
+
+      <h1>Поддержать dokkino</h1>
+
+      <p>
+        dokkino — пространство авторских проектов в музыке,
+        литературе и кино.
+      </p>
+
+      <p>
+        Работа над этими проектами включает создание музыки,
+        развитие сайта, работу над книгами, фильмами и новыми
+        творческими идеями.
+      </p>
+
+      <h2>Поддержка проекта</h2>
+
+      <p>
+        В будущем здесь появится возможность добровольно поддержать
+        развитие dokkino.
+      </p>
+
+      <p>
+        Такая поддержка поможет продолжать работу над новыми
+        произведениями, развивать существующие проекты и делать
+        их доступными более широкой аудитории.
+      </p>
+
+      <h2>Важно</h2>
+
+      <p>
+        Поддержка dokkino будет добровольной и не будет являться
+        покупкой доли в проекте, инвестицией или приобретением
+        каких-либо прав на произведения.
+      </p>
+
+      <div class="notice">
+        <p>
+          Возможность финансовой поддержки пока не подключена.
+          Информация о доступных способах поддержки появится
+          на этой странице позже.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="lang-block" data-lang="en">
+
+    <div class="content-card">
+
+      <h1>Support dokkino</h1>
+
+      <p>
+        dokkino is a space for original projects in music,
+        literature and film.
+      </p>
+
+      <p>
+        Work on these projects includes creating music,
+        developing the website, working on books and films,
+        and developing new creative ideas.
+      </p>
+
+      <h2>Supporting the project</h2>
+
+      <p>
+        In the future, this page will provide an opportunity
+        to voluntarily support the development of dokkino.
+      </p>
+
+      <p>
+        Such support will help continue the creation of new works,
+        develop existing projects and make them available to a
+        wider audience.
+      </p>
+
+      <h2>Important</h2>
+
+      <p>
+        Support for dokkino will be voluntary and will not constitute
+        the purchase of an ownership interest, an investment, or the
+        acquisition of any rights in the works.
+      </p>
+
+      <div class="notice">
+        <p>
+          Financial support is not currently available.
+          Information about available support options will be
+          published on this page later.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a
+        href="terms.html"
+        data-ru="Условия использования"
+        data-en="Terms of Use">
+        Условия использования
+      </a>
+
+      <a
+        href="privacy.html"
+        data-ru="Политика конфиденциальности"
+        data-en="Privacy Policy">
+        Политика конфиденциальности
+      </a>
+
+      <a
+        href="support.html"
+        data-ru="Поддержать dokkino"
+        data-en="Support dokkino">
+        Поддержать dokkino
+      </a>
+
+    </div>
+
+    <div
+      data-ru="&copy; 2026 Sergey Machulyak. Все права защищены."
+      data-en="&copy; 2026 Sergey Machulyak. All rights reserved.">
+      &copy; 2026 Sergey Machulyak. Все права защищены.
+    </div>
+
+  </footer>
+
+</div>
+
+<script>
+function setLanguage(lang) {
+  localStorage.setItem('dokkino_lang', lang);
+
+  document.querySelectorAll('.lang-block').forEach(el => {
+    el.classList.toggle(
+      'active',
+      el.getAttribute('data-lang') === lang
+    );
+  });
+
+  document.querySelectorAll('[data-ru]:not(.lang-block)').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang);
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle(
+      'active',
+      btn.innerText.toLowerCase() === lang
+    );
+  });
+
+  document.documentElement.lang = lang;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('dokkino_lang') || 'ru';
+  setLanguage(savedLang);
+});
+</script>
+
+</body>
+</html>
