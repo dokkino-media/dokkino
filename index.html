@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -160,8 +160,8 @@
 <body>
 
 <div class="lang-switch">
-  <button class="lang-btn active" onclick="setLanguage('ru')">RU</button> |
-  <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+  <button class="lang-btn active" onclick="setLanguage('en')">EN</button> |
+  <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
 </div>
 
 <div class="dokkino-container">
@@ -237,10 +237,8 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('dokkino_lang') || 'ru';
-  setLanguage(savedLang);
-});
+const savedLang = localStorage.getItem('dokkino_lang') || 'en';
+setLanguage(savedLang);
 </script>
 
 </body>
