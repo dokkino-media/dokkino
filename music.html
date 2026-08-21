@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -304,8 +304,8 @@
 <body>
 
 <div class="lang-switch">
-  <button class="lang-btn active" onclick="setLanguage('ru')">RU</button> | 
-  <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+  <button class="lang-btn active" onclick="setLanguage('en')">EN</button> |
+<button class="lang-btn" onclick="setLanguage('ru')">RU</button>
 </div>
 
 <div class="cw-container">
@@ -683,7 +683,7 @@ const tracksData = [
   }
 ];
 
-let currentLang = 'ru';
+let currentLang = 'en';
 
 function renderTracks() {
   const container = document.getElementById('tracksContainer');
@@ -740,7 +740,7 @@ function setLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('dokkino_lang') || 'ru';
+  const savedLang = localStorage.getItem('dokkino_lang') || 'en';
   setLanguage(savedLang);
 });
 
