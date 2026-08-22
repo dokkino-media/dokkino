@@ -226,6 +226,53 @@
     border-bottom: 1px solid var(--card-border);
     padding-bottom: 10px;
   }
+
+  .releases-header-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    border-bottom:1px solid var(--card-border);
+    margin-bottom:16px;
+    padding-bottom:10px;
+    flex-wrap:wrap;
+  }
+  .releases-header-row .cw-section-label{
+    margin-bottom:0; border-bottom:none; padding-bottom:0; white-space:nowrap;
+  }
+
+  .search-wrapper{ position:relative; display:flex; align-items:center; width:100%; max-width:260px; }
+  .search-icon{ position:absolute; left:12px; color:var(--text-secondary); pointer-events:none; }
+
+  .apple-search-input{
+    width:100%; height:36px; padding:0 32px 0 36px;
+    background:var(--bg-main); border:1px solid var(--card-border);
+    border-radius:10px; font-size:14px; font-family:inherit;
+    color:var(--text-primary); outline:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .apple-search-input::placeholder{ color:var(--text-secondary); }
+  .apple-search-input:focus{
+    border-color:var(--gold-accent);
+    box-shadow:0 0 0 3px rgba(197,155,39,0.12);
+  }
+
+  .search-clear-btn{
+    position:absolute; right:8px; background:var(--text-secondary); color:#fff;
+    border:none; width:16px; height:16px; border-radius:50%; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; padding:0;
+    transition:opacity .15s ease;
+  }
+  .search-clear-btn:hover{ opacity:.75; }
+  .search-clear-btn[hidden]{ display:none; }
+
+  .no-tracks-found{ text-align:center; padding:32px 0; color:var(--text-secondary); font-size:15px; }
+  .no-tracks-found[hidden]{ display:none; }
+
+  @media (max-width:600px){
+    .releases-header-row{ flex-direction:column; align-items:stretch; }
+    .search-wrapper{ max-width:100%; }
+  }
   
   .platforms-grid {
     display: grid;
@@ -327,13 +374,32 @@
       Дискография и истории создания треков
     </div>
 
-    <div class="cw-section-label"
-         data-ru="Релизы"
-         data-en="Releases">
-      Релизы
+    <div class="releases-header-row">
+      <div class="cw-section-label"
+           data-ru="Релизы"
+           data-en="Releases">
+        Релизы
+      </div>
+
+      <div class="search-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="trackSearchInput" class="apple-search-input"
+               placeholder="Search tracks..."
+               data-ph-ru="Поиск по трекам..."
+               data-ph-en="Search tracks..."
+               autocomplete="off" spellcheck="false" aria-label="Search tracks">
+        <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search" hidden>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
     </div>
 
     <div class="track-list" id="tracksContainer"></div>
+    <div id="noTracksFound" class="no-tracks-found" role="status" aria-live="polite" hidden
+         data-ru="Треки не найдены" data-en="No tracks found"></div>
   </div>
 
   <footer>
@@ -684,12 +750,23 @@ const tracksData = [
 ];
 
 let currentLang = 'en';
+let searchQuery = '';
+
+function normalizeSearch(str) {
+  return str.toLowerCase().replace(/ё/g, 'е');
+}
 
 function renderTracks() {
   const container = document.getElementById('tracksContainer');
+  const noResultsEl = document.getElementById('noTracksFound');
   container.innerHTML = '';
 
-  tracksData.forEach(track => {
+  const query = normalizeSearch(searchQuery.trim());
+  const filtered = query
+    ? tracksData.filter(t => normalizeSearch(`${t.title} ${t.type} ${t.year} ${t.genre}`).includes(query))
+    : tracksData;
+
+  filtered.forEach(track => {
     const slug = trackSlugs[track.id];
     const href = `music/${slug}.html`;
 
@@ -719,6 +796,8 @@ function renderTracks() {
 
     container.appendChild(a);
   });
+
+  if (noResultsEl) noResultsEl.hidden = filtered.length > 0;
 }
 
 function setLanguage(lang) {
@@ -736,12 +815,42 @@ function setLanguage(lang) {
 
   document.documentElement.lang = lang;
 
+  const searchInput = document.getElementById('trackSearchInput');
+  if (searchInput) {
+    searchInput.placeholder = searchInput.getAttribute('data-ph-' + lang) || searchInput.placeholder;
+  }
+
   renderTracks();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('dokkino_lang') || 'en';
   setLanguage(savedLang);
+
+  const searchInput = document.getElementById('trackSearchInput');
+  const clearBtn = document.getElementById('searchClearBtn');
+  let debounceTimer;
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        searchQuery = searchInput.value;
+        clearBtn.hidden = !searchQuery.trim();
+        renderTracks();
+      }, 120);
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearBtn.hidden = true;
+      renderTracks();
+      searchInput.focus();
+    });
+  }
 });
 
 </script>
