@@ -752,8 +752,41 @@ const tracksData = [
 let currentLang = 'en';
 let searchQuery = '';
 
+// Словарь: английское слово из жанра -> русские синонимы для поиска.
+// Если жанр трека содержит ключ слева, к поисковому индексу трека
+// добавляются все слова справа (и наоборот можно искать по-английски как обычно).
+const genreTranslations = {
+  'ambient':      ['эмбиент', 'эмбиэнт'],
+  'cinematic':    ['кинематографичный', 'кино'],
+  'jazz':         ['джаз'],
+  'lo-fi':        ['лоуфай', 'ло-фай'],
+  'neoclassical': ['неоклассика'],
+  'acoustic':     ['акустика', 'акустический'],
+  'folk':         ['фолк'],
+  'house':        ['хаус'],
+  'deep house':   ['дип хаус'],
+  'progressive':  ['прогрессив'],
+  'spiritual':    ['духовный', 'спиричуал'],
+  'meditation':   ['медитация'],
+  'pop':          ['поп'],
+  'electronic':   ['электроника', 'электронная'],
+  'dark':         ['тёмный', 'темный'],
+  'ballad':       ['баллада'],
+  'single':       ['сингл']
+};
+
 function normalizeSearch(str) {
   return str.toLowerCase().replace(/ё/g, 'е');
+}
+
+function buildSearchIndex(track) {
+  let text = `${track.title} ${track.type} ${track.year} ${track.genre}`.toLowerCase();
+  Object.keys(genreTranslations).forEach(key => {
+    if (text.includes(key)) {
+      text += ' ' + genreTranslations[key].join(' ');
+    }
+  });
+  return normalizeSearch(text);
 }
 
 function renderTracks() {
@@ -763,7 +796,7 @@ function renderTracks() {
 
   const query = normalizeSearch(searchQuery.trim());
   const filtered = query
-    ? tracksData.filter(t => normalizeSearch(`${t.title} ${t.type} ${t.year} ${t.genre}`).includes(query))
+    ? tracksData.filter(t => buildSearchIndex(t).includes(query))
     : tracksData;
 
   filtered.forEach(track => {
