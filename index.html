@@ -78,6 +78,87 @@
 
   .gold-k { color: var(--gold-accent); }
 
+  .search-wrapper{
+    position:relative;
+    max-width:420px;
+    margin:0 auto 60px;
+  }
+  .search-input-row{
+    position:relative;
+    display:flex;
+    align-items:center;
+  }
+  .search-icon{
+    position:absolute;
+    left:16px;
+    color:var(--text-secondary);
+    pointer-events:none;
+  }
+  .site-search-input{
+    width:100%;
+    height:48px;
+    padding:0 40px 0 44px;
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    font-size:15px;
+    font-family:inherit;
+    color:var(--text-primary);
+    outline:none;
+    text-align:left;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .site-search-input::placeholder{ color:var(--text-secondary); }
+  .site-search-input:focus{
+    border-color:var(--gold-accent);
+    box-shadow:0 0 0 3px rgba(197,155,39,0.12);
+  }
+  .search-clear-btn{
+    position:absolute; right:12px;
+    background:var(--text-secondary); color:#fff;
+    border:none; width:20px; height:20px; border-radius:50%;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    padding:0; transition:opacity .15s ease;
+  }
+  .search-clear-btn:hover{ opacity:.75; }
+  .search-clear-btn[hidden]{ display:none; }
+
+  .search-suggestions{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0; right:0;
+    background:var(--bg-main);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    box-shadow:0 12px 28px rgba(26,25,24,0.10);
+    overflow:hidden;
+    z-index:20;
+    text-align:left;
+  }
+  .search-suggestions[hidden]{ display:none; }
+
+  .suggestion-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 16px;
+    cursor:pointer;
+    font-size:14px;
+    color:var(--text-primary);
+    border-bottom:1px solid var(--card-border);
+  }
+  .suggestion-item:last-child{ border-bottom:none; }
+  .suggestion-item:hover, .suggestion-item.active{ background:var(--card-bg); }
+  .suggestion-arrow{ color:var(--gold-accent); font-weight:600; font-size:13px; flex-shrink:0; }
+
+  .suggestion-empty{
+    padding:14px 16px;
+    font-size:13px;
+    color:var(--text-secondary);
+    text-align:center;
+  }
+
   .hub-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -169,6 +250,24 @@
     <div class="brand-logo">dok<span class="gold-k">k</span>ino</div>
   </header>
 
+  <div class="search-wrapper">
+    <div class="search-input-row">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="siteSearchInput" class="site-search-input"
+             placeholder="Search music, books, film..."
+             data-ph-ru="Поиск по музыке, книгам, фильмам..."
+             data-ph-en="Search music, books, film..."
+             autocomplete="off" spellcheck="false" aria-label="Site search">
+      <button type="button" id="siteSearchClear" class="search-clear-btn" aria-label="Clear search" hidden>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div id="searchSuggestions" class="search-suggestions" hidden></div>
+  </div>
+
   <main class="hub-grid">
     <a href="music.html" class="hub-card">
       <div>
@@ -224,6 +323,177 @@
 </div>
 
 <script>
+// Разговорник: по каким словам (RU/EN) куда вести человека.
+// url — куда переходим; external:true — открываем в новой вкладке (YouTube и т.п.)
+const siteIndex = [
+  {
+    title: { ru: 'dokkino music — дискография', en: 'dokkino music — discography' },
+    keywords: ['музыка','music','треки','tracks','дискография','discography','альбом','album','песни','songs','слушать','listen'],
+    url: 'music.html',
+    external: false
+  },
+  {
+    title: { ru: 'dokkino book — Джорж Флоринг', en: 'dokkino book — George Floring' },
+    keywords: ['книга','книги','book','books','флоринг','floring','джорж','george','крис вэй','chris way','серия','series'],
+    url: 'books.html',
+    external: false
+  },
+  {
+    title: { ru: 'dokkino film — канал на YouTube', en: 'dokkino film — YouTube channel' },
+    keywords: ['фильм','кино','film','movie','видео','video','youtube','канал','channel'],
+    url: 'https://youtube.com/@dokkino',
+    external: true
+  },
+  {
+    title: { ru: '«Теория струн» — фильм на YouTube', en: '"String Theory" — film on YouTube' },
+    keywords: ['теория струн','string theory','струн','strings','теория'],
+    url: 'https://youtu.be/_p9hU-yL_JE?si=Yqz2LQtncVDqut5H',
+    external: true
+  },
+  {
+    title: { ru: 'Поддержать dokkino', en: 'Support dokkino' },
+    keywords: ['поддержать','support','донат','donate','чаевые','tips'],
+    url: 'support.html',
+    external: false
+  },
+  {
+    title: { ru: 'Написать нам', en: 'Contact us' },
+    keywords: ['контакт','contact','написать','email','почта'],
+    url: 'mailto:contact@dokkino.com',
+    external: false
+  }
+];
+
+// Отдельные треки — набрал название, попал сразу на страницу трека.
+const trackIndex = [
+  { id: 1,  title: 'We Are Eternity',                          slug: 'we-are-eternity' },
+  { id: 2,  title: 'Eden He',                                   slug: 'eden-he' },
+  { id: 3,  title: 'Eden She and He',                           slug: 'eden-she-and-he' },
+  { id: 4,  title: 'Created by Him',                            slug: 'created-by-him' },
+  { id: 5,  title: 'Falling Into You',                          slug: 'falling-into-you' },
+  { id: 6,  title: 'Transitions (Female Vocal Version)',        slug: 'transitions-female-vocal-version' },
+  { id: 7,  title: 'Transitions (Original Version)',            slug: 'transitions-original-version' },
+  { id: 8,  title: 'Moon Returns',                              slug: 'moon-returns' },
+  { id: 9,  title: 'Autumn Dialogue',                           slug: 'autumn-dialogue' },
+  { id: 10, title: 'Song of Infinity',                          slug: 'song-of-infinity' },
+  { id: 11, title: 'Song of Infinity (Alternate Mix)',          slug: 'song-of-infinity-alternate-mix' },
+  { id: 12, title: 'Song of Infinity (Extended Alternate Mix)', slug: 'song-of-infinity-extended-alternate-mix' },
+  { id: 13, title: 'Эдем. Он',                                  slug: 'edem-on' },
+  { id: 14, title: 'Эдем. Она',                                 slug: 'edem-ona' },
+  { id: 15, title: 'Храм Тишины',                                slug: 'hram-tishiny' },
+  { id: 16, title: 'The Temple of Silence',                     slug: 'the-temple-of-silence' },
+  { id: 17, title: 'Незабудка',                                  slug: 'nezabudka' },
+  { id: 18, title: 'Осенний диалог',                             slug: 'osennii-dialog' },
+  { id: 19, title: 'Мы подходим друг другу',                     slug: 'my-podhodim-drug-drugu' },
+  { id: 20, title: 'Любовь не спорит',                           slug: 'lyubov-ne-sporit' },
+  { id: 21, title: 'Луна',                                       slug: 'luna' },
+  { id: 22, title: 'Несмиренная',                                slug: 'nesmirennaya' }
+];
+
+trackIndex.forEach(track => {
+  siteIndex.push({
+    title: { ru: `${track.title} — трек`, en: `${track.title} — track` },
+    keywords: [track.title],
+    url: `music/${track.slug}.html`,
+    external: false
+  });
+});
+
+function normalizeSiteSearch(str) {
+  return str.toLowerCase().trim().replace(/ё/g, 'е');
+}
+
+function findMatches(query) {
+  const q = normalizeSiteSearch(query);
+  if (!q) return [];
+
+  const matches = siteIndex.filter(entry =>
+    entry.keywords.some(k => normalizeSiteSearch(k).includes(q) || q.includes(normalizeSiteSearch(k)))
+  );
+
+  // Точные и "начинается с" совпадения — выше в списке.
+  matches.sort((a, b) => {
+    const score = entry => Math.min(...entry.keywords.map(k => {
+      const nk = normalizeSiteSearch(k);
+      if (nk === q) return 0;
+      if (nk.startsWith(q)) return 1;
+      return 2;
+    }));
+    return score(a) - score(b);
+  });
+
+  return matches.slice(0, 6);
+}
+
+function goToEntry(entry) {
+  if (entry.external) {
+    window.open(entry.url, '_blank', 'noopener');
+  } else {
+    window.location.href = entry.url;
+  }
+}
+
+function renderSuggestions(matches) {
+  const box = document.getElementById('searchSuggestions');
+  const lang = document.documentElement.lang === 'ru' ? 'ru' : 'en';
+
+  if (matches.length === 0) {
+    box.innerHTML = `<div class="suggestion-empty">${lang === 'ru' ? 'Ничего не найдено' : 'Nothing found'}</div>`;
+    box.hidden = false;
+    return;
+  }
+
+  box.innerHTML = matches.map((entry, i) => `
+    <div class="suggestion-item${i === 0 ? ' active' : ''}" data-index="${i}">
+      <span>${entry.title[lang]}</span>
+      <span class="suggestion-arrow">${entry.external ? '↗' : '→'}</span>
+    </div>
+  `).join('');
+  box.hidden = false;
+
+  box.querySelectorAll('.suggestion-item').forEach(el => {
+    el.addEventListener('click', () => goToEntry(matches[parseInt(el.dataset.index, 10)]));
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('siteSearchInput');
+  const clearBtn = document.getElementById('siteSearchClear');
+  const box = document.getElementById('searchSuggestions');
+  let currentMatches = [];
+
+  input.addEventListener('input', () => {
+    clearBtn.hidden = !input.value.trim();
+    currentMatches = findMatches(input.value);
+    if (input.value.trim()) {
+      renderSuggestions(currentMatches);
+    } else {
+      box.hidden = true;
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && currentMatches.length > 0) {
+      goToEntry(currentMatches[0]);
+    }
+    if (e.key === 'Escape') {
+      box.hidden = true;
+      input.blur();
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.hidden = true;
+    box.hidden = true;
+    input.focus();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-wrapper')) box.hidden = true;
+  });
+});
+
 function setLanguage(lang) {
   localStorage.setItem('dokkino_lang', lang);
 
@@ -236,6 +506,13 @@ function setLanguage(lang) {
   });
 
   document.documentElement.lang = lang;
+
+  const input = document.getElementById('siteSearchInput');
+  if (input) {
+    input.placeholder = input.getAttribute('data-ph-' + lang) || input.placeholder;
+  }
+  const box = document.getElementById('searchSuggestions');
+  if (box) box.hidden = true;
 }
 
 const savedLang = localStorage.getItem('dokkino_lang') || 'en';
